@@ -11,6 +11,7 @@
 \usepackage{natbib}        % required for bibliography
 \usepackage{xcolor}
 \usepackage{subcaption}
+\usepackage{siunitx}
 %===============================================================================
 \begin{document}
 \begin{frontmatter}
@@ -242,7 +243,7 @@ Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
 
 \section{Experimental Validation}
 \label{sec:experimental_validation}
-
+\textcolor{red}{pensa se incrementare $\varepsilon$ a 20cm invece di 17cm}
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.31\columnwidth}
@@ -262,6 +263,33 @@ Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
       \end{subfigure}
    \vspace{-0.2cm}
    \caption{Trajectories of the three agents with desired and actual interdistances in the experiments.}
+\end{figure}
+
+For each obstacle, just add a corrective APF term: \textcolor{red}{add formula}
+
+Increased $y_A^d$ of $\SI{0.5}{\meter}$, 
+formation reached after \SI{55.30}{\second}(the drone 
+takes some time, but $R_2$ achieve the formation w.r.t 
+$R_1$ after \SI{16.02}{\second}), when swapped
+the formation is achieved after \SI{9.74}{\second} 
+(drone after \SI{8.32}{\second}
+while $R_2$ after \SI{9.74}{\second}).
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.31\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_obs_exp.eps}
+        \caption{$R_2$ on the right}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.31\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_obs_swap.eps}
+        \caption{$R_2$ on the left}
+    \end{subfigure}
+    \vspace{-0.2cm}
+    \caption{\textcolor{red}{TODO}}
 \end{figure}
 
 
