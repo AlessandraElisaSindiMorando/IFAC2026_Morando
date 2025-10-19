@@ -84,9 +84,17 @@ are proposed and validated through simulations by~\cite{Zhong2025} for the forma
 of a term of quadrotors.
 
 In this context is placed this work which proposes a novel formation control scheme
-for a team consisting of a quadcopter and two unicycles, as show in Fig.
-\textcolor{red}{put image}.
-when addressing the multi-agent formation, there are two main challenges to solve: 
+for a team consisting of a quadcopter and two unicycles, as show in Fig.~\ref{fig:summary_image}.
+\begin{figure}
+    \centering
+    % trim = left bottom right top (in points or any unit)
+    % clip = true ensures the parts outside the box are hidden
+    \includegraphics[width=0.9\columnwidth, trim=10 50 15 110, clip]{images/output.pdf}
+    \caption{This paper proposes a formation control for a heterogeneous fleet to attain a desired shape despite obstacles.}
+    \label{fig:summary_image}
+    \vspace{-0.1cm}
+\end{figure}
+When addressing the multi-agent formation, there are two main challenges to solve: 
 achieving the desired shape and avoiding collisions.
 On one hand, for the first challenge, a distributed controller combining Feedback 
 Linearization (FL) and an optimal linear controller based on Linear Matrix 
