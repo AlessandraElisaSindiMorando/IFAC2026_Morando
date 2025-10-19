@@ -1,0 +1,189 @@
+%===============================================================================
+% ifacconf.tex 2025-07-31 jpuente  
+% 2022-11-11 jpuente change length of abstract
+% 2025-07-31 jldiez added section on the use of AI
+% Template for IFAC meeting papers
+% Copyright (c) 2025 International Federation of Automatic Control
+%===============================================================================
+\documentclass{ifacconf}
+
+\usepackage{graphicx}      % include this line if your document contains figures
+\usepackage{natbib}        % required for bibliography
+\usepackage{xcolor}
+\usepackage{enumitem}      % inline item
+%===============================================================================
+\begin{document}
+\begin{frontmatter}
+
+\title{\textcolor{red}{Style for IFAC Conferences \& Symposia: Use Title Case for
+  Paper Title}} 
+% Title, preferably not more than 10 words.
+
+\author[First,Second]{Alessandra Elisa Sindi Morando} 
+\author[Second]{Pedro Castillo} 
+\author[First]{Roberto Sacile}
+\author[First]{Enrico Zero}
+
+\address[First]{
+   \textit{University of Genoa}, Genoa, Italy \\
+   alessandra.elisa.sindi.morando@edu.unige.it, roberto.sacile@unige.it, enrico.zero@dibris.unige.it
+}
+\address[Second]{
+   \textit{Université de technologie de Compiègne}, CNRS, Heudiasyc, Compiègne, France \\
+   alessandra-elisa-sindi.morando@utc.fr, pedro.castillo@hds.utc.fr
+}
+
+\begin{abstract}                % Abstract of 50--100 words
+\textcolor{red}{\dots}
+\end{abstract}
+
+\begin{keyword}
+   \textcolor{red}{\dots}
+   %Five to ten keywords, preferably chosen from the IFAC keyword list.
+\end{keyword}
+
+\end{frontmatter}
+%===============================================================================
+
+\section{Introduction}
+Multi-agent systems (MASs) are nowadays used in a variety of applications from as
+they can perform complex tasks, which would otherwise impossible for a single robot.
+This is even more the case when considering heterogeneous fleet where the strenghts
+of one type of robot can compensate for the limitations of another.
+For example, to monitor a large area, multiple ground agents can move from one point 
+to another being supervised from above by a drone with a wide field of view.
+To deepen the subject and understand both the potential tasks and challenges of MASs,
+the reader can refer to the work of~\cite{Maldonado2024}.
+
+One of the fundamental cooperative tasks when working with multi-agents is formation
+control.
+This topic has been studied for years.
+For example, already~\cite{LEE200985} already proposed
+a decentralized control algorithm for a team of two-wheeled robots 
+to achieve achieve a geometric pattern.
+However, formation control remains an hot challenging topic to this day.
+\cite{TRAN2021100117} experimentally validated a robust distributed control 
+based on negative imaginary systems consensus theory, using both ground robots and
+an air-ground fleet.
+In the work of~\cite{GULER2023105492}, each agent computes its control action 
+in a leader-follower manner using local extended Kalman filter's estimates to 
+achieve a desired shape together with other wheeled robots and a drone.
+An optimal distributed formation control algorithm for double-integrator multi-agents
+has been presented and validated through simulations by~\cite{Huang2023}.
+\cite{Aditya2023} defined the formation problem for a group of double-integrator agents 
+as a discrete-time game whose solution is given by a state-dependent Riccati equation.
+A robust distributed consensus controller is presented by~\cite{Restrepo2023}
+to address the rendezvous problem and applied in simulation to a swarm of drones.
+In the recent years, reinforcement learning has used in many areas including 
+formation control. 
+\cite{WANG20208150} addressed multi-particle formation control by combining 
+graph attention networks and multiple long short-term memories to achieve the 
+desired shape and avoid collisions respectively.
+A position and an orientation robust controllers based on reinforcement learning 
+are proposed and validated through simulations by~\cite{Zhong2025} for the formation 
+of a term of quadrotors.
+
+In this context is placed this work which proposes a novel formation control scheme
+for a team consisting of a quadcopter and two unicycles, as show in Fig.
+\textcolor{red}{put image}.
+when addressing the multi-agent formation, there are two main challenges to solve: 
+achieving the desired shape and avoiding collisions.
+On one hand, for the first challenge, a distributed controller combining Feedback 
+Linearization (FL) and an optimal linear controller based on Linear Matrix 
+Inequalities (LMIs) is presented.
+LMIs are a powerful mathematical tool used in many applications among which also 
+formation control.
+In the work of~\cite{Trejo2023}, an LMI is solved to design the controller 
+and observer gains, guaranteeing stable formation flight for a group of quadcopters.
+~\cite{Deshpande2011} propose a formation control with artificial 
+fixed delays for multiple double-integrators and 
+verify the asymptotic stability of the scheme by checking 
+the solvability of an LMI.
+~\cite{Semsar2009} present an LMI formulation of the LQR problem 
+to guarantee stable state consensus with an optimal control effort 
+in a multi-agent system.
+On the other end, to avoid collision avoidance, the chosen solution is 
+Artificial Potential Field (APF).
+In analogy with a particle moving in an electrostatic or gravitational
+field, virtual repulsive force fields are simulated to ward off the robot
+from an obstacle.
+This approach has been widely used in formation control of ground vehicles,
+see for example the work of~\cite{Yongshen2018}.
+However, in more recent works, e.g.~\cite{HAN2024106105} and~\cite{Piet2025Control},
+APFs are employed to navigate around obstacles and prevent collisions 
+while attaining the desired shape.
+% \textcolor{red}{
+% \begin{itemize}
+%    %  \item survey on multi-agent systems~\cite{Maldonado2024}
+%    %  \item other works on air-ground cooperation:
+%    %  \item works on obstacle avoidance and formation:
+%    %  ~\cite{WANG20208150},
+%    %  ~\cite{TRAN2021100117} (air-ground),
+%    %  ~\cite{GULER2023105492}(air-ground, adaptive distributed leader-follower controller for formation),
+%    %  ~\cite{Huang2023}(optimal algoritm, as me, and control barrier function),
+%    %  ~\cite{Restrepo2023}(UAVs formation, collision vaoidance guaranteed with constraints),
+%    %  ~\cite{Aditya2023}(double integrator Riccati equation for formation and collision avoidance)
+%    %  ~\cite{LEE200985},
+%    % \item LMI:
+%    % ~\cite{Deshpande2011}(LMI  double integrator formation),
+%    % ~\cite{Trejo2023}(use LMI to find controller gains for UAVs formation), 
+%    % ~\cite{Semsar2009}(LMI to optimal consensus multi-agent)
+%    %  \item other works with APF:
+%    %  ~\cite{Yongshen2018}(applied to UGVs),
+%    %  ~\cite{Piet2025Control, HAN2024106105} (both applied to drones)
+%     \item previous work:~\cite{Morando2025SOSE}
+% \end{itemize}
+% }
+
+This paper represents the continuation of the previous work by~\cite{Morando2025SOSE},
+where a control architecture combining Feedback Linerarization (FL), 
+a robust LMI-based controller and APFs was proposed 
+and validated through simulations for 
+the formation of three unicycles.
+The successive developments sought to manage the challenge
+of a heterogeneous team (replacing a ground vehicle with a quadcopter)
+by adapting the methodology and then experimentally validating 
+the new solution.
+The contributions of this work are: a) a controller involving FL, a LMI-based controller and APFs 
+is presented for the stable formation of an air-ground fleet;
+b) the proposed controller has been validated through MATLAB Simulink
+simulations and a comprensive set of experiments, including both static
+and dynamic obstacle scenarios.
+The remainder paper is structured as follows. 
+In Section~\ref{sec:heterogeneous_fleet_modeling}, 
+the mathematical model used to describe the team is stated.
+The proposed formation controller is detailed in Section~\ref{sec:formation_controller}.
+The simulations and experiments results are reported and analyzed
+in Section~\ref{sec:simulation_results} and 
+in Section~\ref{sec:experimental_validation} respectively.
+Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
+
+\section{Heterogeneous Fleet Modeling}
+\label{sec:heterogeneous_fleet_modeling}
+
+\begin{figure}
+    \centering
+   %  \includegraphics[height=6cm]{images/heterogenous_fleet.pdf}
+    \includegraphics[height=6cm]{images/heterogenous_fleet_PNG300.png}
+    \caption{Air-ground heterogeneous fleet.}
+    \label{fig:airground-fleet}
+\end{figure}
+
+\section{Formation Controller}
+\label{sec:formation_controller}
+
+\section{Simulations Results}
+\label{sec:simulation_results}
+
+\section{Experimental Validation}
+\label{sec:experimental_validation}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+\dots
+
+\bibliography{bibliography}    % bib file to produce the bibliography
+                           % with bibtex (preferred)
+
+\end{document}

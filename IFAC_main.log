@@ -1,0 +1,279 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.8.22)  19 OCT 2025 17:29
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/marcone/Dropbox/IFAC2026/IFAC_main.tex
+(/home/marcone/Dropbox/IFAC2026/IFAC_main.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (/home/marcone/Dropbox/IFAC2026/ifacconf.cls
+Document Class: ifacconf 2022/02/11, 1.3: IFAC-PapersOnline
+
+\@frontmatterwidth=\dimen134
+\@bls=\dimen135
+\eqntopsep=\skip47
+\eqnarraycolsep=\dimen136
+\labelwidthi=\dimen137
+\labelwidthii=\dimen138
+\labelwidthiii=\dimen139
+\labelwidthiv=\dimen140
+\@maxlistdepth=\count167
+\eqnbaselineskip=\skip48
+\eqnlineskip=\skip49
+\mathindent=\dimen141
+\rulepreskip=\dimen142
+\rulepostskip=\dimen143
+\Arrayrulewidth=\dimen144
+\crulepostskip=\dimen145
+\@Ldec=\dimen146
+\@Rdec=\dimen147
+\@Lpmdec=\dimen148
+\@Rpmdec=\dimen149
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+(/usr/share/texlive/texmf-dist/tex/latex/tools/theorem.sty
+Package: theorem 2014/10/28 v2.2c Theorem extension package (FMi)
+\theorem@style=\toks14
+\theorem@bodyfont=\toks15
+\theorempreskipamount=\skip50
+\theorempostskipamount=\skip51
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/thp.sty
+File: thp.sty 2014/10/28 v2.2c Theorem extension package (FMi)
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/newlfont.sty
+Package: newlfont 1998/08/17 v2.2m Standard LaTeX package
+LaTeX Info: Redefining \em on input line 57.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+))
+LaTeX Info: Redefining \rm on input line 596.
+LaTeX Info: Redefining \sf on input line 597.
+LaTeX Info: Redefining \tt on input line 598.
+LaTeX Info: Redefining \bf on input line 599.
+LaTeX Info: Redefining \it on input line 600.
+LaTeX Info: Redefining \sl on input line 601.
+LaTeX Info: Redefining \sc on input line 602.
+\c@thm=\count173
+\c@alg=\count174
+\c@algorithm=\count175
+\c@note=\count176
+\c@summ=\count177
+\c@case=\count178
+\@tempcntc=\count179
+\c@figure=\count180
+\c@table=\count181
+\t@glob@notes=\toks16
+\t@loc@notes=\toks17
+\note@cnt=\count182
+\c@author=\count183
+\n@author=\count184
+\c@collab=\count185
+\n@collab=\count186
+\c@address=\count187
+\sv@mathsurround=\dimen150
+\sv@hyphenpenalty=\count188
+\prev@elem=\count189
+\cur@elem=\count190
+\fm@box=\box45
+\fm@size=\dimen151
+\t@abstract=\box46
+\t@keyword=\box47
+\rep@mod=\count191
+\t@xtheight=\dimen152
+\@logoheight=\dimen153
+\@pubyear=\count192
+\c@firstpage=\count193
+\c@lastpage=\count194
+\slashbox=\box48
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1508.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1508.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 1508.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+\Slashbox=\box49
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 1509.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1509.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1509.
+\@frontindent=\dimen154
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen155
+\Gin@req@width=\dimen156
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count195
+) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip54
+\enit@outerparindent=\dimen157
+\enit@toks=\toks19
+\enit@inbox=\box50
+\enit@count@id=\count196
+\enitdp@description=\count197
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count198
+\l__pdf_internal_box=\box51
+) (/home/marcone/Dropbox/IFAC2026/IFAC_main.aux)
+\openout1 = `IFAC_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count199
+\scratchdimen=\dimen158
+\scratchbox=\box52
+\nofMPsegments=\count266
+\nofMParguments=\count267
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count268
+\MPscratchDim=\dimen159
+\MPnumerator=\count269
+\makeMPintoPDFobject=\count270
+\everyMPtoPDFconversion=\toks21
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14> on input line 19.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.79996> on input line 19.
+\c@sv@footnote=\count271
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+<images/heterogenous_fleet_PNG300.png, id=12, 3008.23875pt x 2797.45125pt>
+File: images/heterogenous_fleet_PNG300.png Graphic file (type png)
+<use images/heterogenous_fleet_PNG300.png>
+Package pdftex.def Info: images/heterogenous_fleet_PNG300.png  used on input line 167.
+(pdftex.def)             Requested size: 183.56197pt x 170.71652pt.
+ (/home/marcone/Dropbox/IFAC2026/IFAC_main.bbl
+Underfull \hbox (badness 4699) in paragraph at lines 28--33
+[]\OT1/cmr/m/n/10 G^^?uler, S. and []Isa E. Y^^Pld^^Pr^^Pm (2023).  A dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--33
+\OT1/cmr/m/n/10 tributed rel-a-tive lo-cal-iza-tion ap-proach for air-
+ []
+
+
+Underfull \hbox (badness 7667) in paragraph at lines 28--33
+\OT1/cmr/m/n/10 ground robot for-ma-tions with on-board sens-ing.
+ []
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 35--40
+[]\OT1/cmr/m/n/10 Han, L., Wang, Y., Yan, Z., Li, X., and Ren,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--40
+\OT1/cmr/m/n/10 Z. (2024).  Event-triggered for-ma-tion con-trol
+ []
+
+
+Underfull \hbox (badness 5862) in paragraph at lines 35--40
+\OT1/cmr/m/n/10 with ob-sta-cle avoid-ance for multi-agent sys-tems
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--40
+\OT1/cmr/m/n/10 ap-plied to multi-uav for-ma-tion fly-ing.  \OT1/cmr/m/it/10 Con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--40
+\OT1/cmr/m/it/10 trol En-gi-neer-ing Prac-tice\OT1/cmr/m/n/10 , 153, 106105.  doi:
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 42--47
+\OT1/cmr/m/n/10 Dis-tributed op-ti-mal for-ma-tion con-trol of second-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 </home/marcone/Dropbox/IFAC2026/images/heterogenous_fleet_PNG300.png>]) [3
+
+] (/home/marcone/Dropbox/IFAC2026/IFAC_main.aux) ) 
+Here is how much of TeX's memory you used:
+ 2896 strings out of 481239
+ 39194 string characters out of 5920377
+ 288258 words of memory out of 5000000
+ 18163 multiletter control sequences out of 15000+600000
+ 537690 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 33i,8n,37p,271b,238s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on /home/marcone/Dropbox/IFAC2026/IFAC_main.pdf (3 pages, 383954 bytes).
+PDF statistics:
+ 41 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

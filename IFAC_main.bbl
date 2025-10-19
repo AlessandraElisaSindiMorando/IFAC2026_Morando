@@ -1,0 +1,131 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Aditya and Werner(2023)}]{Aditya2023}
+Aditya, P. and Werner, H. (2023).
+\newblock A distributed linear quadratic discrete-time game approach to
+  formation control with collision avoidance.
+\newblock In \emph{2023 62nd IEEE Conference on Decision and Control (CDC)},
+  1239--1244.
+\newblock \doi{10.1109/CDC49753.2023.10384062}.
+
+\bibitem[{Deshpande et~al.(2011)Deshpande, Menon, Edwards, and
+  Postlethwaite}]{Deshpande2011}
+Deshpande, P., Menon, P.P., Edwards, C., and Postlethwaite, I. (2011).
+\newblock Formation control of multi-agent systems with double integrator
+  dynamics using delayed static output feedback.
+\newblock In \emph{2011 50th IEEE Conference on Decision and Control and
+  European Control Conference}, 3446--3451.
+\newblock \doi{10.1109/CDC.2011.6161074}.
+
+\bibitem[{Güler and İsa E.~Yıldırım(2023)}]{GULER2023105492}
+Güler, S. and İsa E.~Yıldırım (2023).
+\newblock A distributed relative localization approach for air-ground robot
+  formations with onboard sensing.
+\newblock \emph{Control Engineering Practice}, 135, 105492.
+\newblock \doi{https://doi.org/10.1016/j.conengprac.2023.105492}.
+
+\bibitem[{Han et~al.(2024)Han, Wang, Yan, Li, and Ren}]{HAN2024106105}
+Han, L., Wang, Y., Yan, Z., Li, X., and Ren, Z. (2024).
+\newblock Event-triggered formation control with obstacle avoidance for
+  multi-agent systems applied to multi-uav formation flying.
+\newblock \emph{Control Engineering Practice}, 153, 106105.
+\newblock \doi{https://doi.org/10.1016/j.conengprac.2024.106105}.
+
+\bibitem[{Huang et~al.(2023)Huang, Duan, Su, and Zhu}]{Huang2023}
+Huang, F., Duan, M., Su, H., and Zhu, S. (2023).
+\newblock Distributed optimal formation control of second-order multiagent
+  systems with obstacle avoidance.
+\newblock \emph{IEEE Control Systems Letters}, 7, 2647--2652.
+\newblock \doi{10.1109/LCSYS.2023.3287950}.
+
+\bibitem[{Lee and Chong(2009)}]{LEE200985}
+Lee, G. and Chong, N.Y. (2009).
+\newblock Decentralized formation control for small-scale robot teams with
+  anonymity.
+\newblock \emph{Mechatronics}, 19(1), 85--105.
+\newblock \doi{https://doi.org/10.1016/j.mechatronics.2008.06.005}.
+
+\bibitem[{Maldonado et~al.(2024)Maldonado, Cruz, Abad~Torres, Cruz, and
+  Gamboa~Benitez}]{Maldonado2024}
+Maldonado, D., Cruz, E., Abad~Torres, J., Cruz, P.J., and Gamboa~Benitez,
+  S.d.P. (2024).
+\newblock Multi-agent systems: A survey about its components, framework and
+  workflow.
+\newblock \emph{IEEE Access}, 12, 80950--80975.
+\newblock \doi{10.1109/ACCESS.2024.3409051}.
+
+\bibitem[{Morando et~al.(2025)Morando, Bozzi, Zero, Sacile, and
+  Castillo}]{Morando2025SOSE}
+Morando, A.E.S., Bozzi, A., Zero, E., Sacile, R., and Castillo, P. (2025).
+\newblock Robust control architecture for fleet formation based on lmi and
+  artificial potential fields.
+\newblock In \emph{2025 20th Annual System of Systems Engineering Conference
+  (SoSE)}, 1--6.
+\newblock \doi{10.1109/SoSE66311.2025.11083835}.
+
+\bibitem[{Piet et~al.(2025)Piet, Strub, Changey, and Petit}]{Piet2025Control}
+Piet, B., Strub, G., Changey, S., and Petit, N. (2025).
+\newblock Control of an uav swarm in amorphous formation.
+\newblock In \emph{2025 American Control Conference (ACC)}, 469--475.
+\newblock \doi{10.23919/ACC63710.2025.11108054}.
+
+\bibitem[{Restrepo et~al.(2023)Restrepo, Loría, Sarras, and
+  Marzat}]{Restrepo2023}
+Restrepo, E., Loría, A., Sarras, I., and Marzat, J. (2023).
+\newblock Robust consensus of high-order systems under output constraints:
+  Application to rendezvous of underactuated uavs.
+\newblock \emph{IEEE Transactions on Automatic Control}, 68(1), 329--342.
+\newblock \doi{10.1109/TAC.2022.3144107}.
+
+\bibitem[{Semsar-Kazerooni and Khorasani(2009)}]{Semsar2009}
+Semsar-Kazerooni, E. and Khorasani, K. (2009).
+\newblock An lmi approach to optimal consensus seeking in multi-agent systems.
+\newblock In \emph{2009 American Control Conference}, 4519--4524.
+\newblock \doi{10.1109/ACC.2009.5160268}.
+
+\bibitem[{Tran et~al.(2021)Tran, Garratt, and Petersen}]{TRAN2021100117}
+Tran, V.P., Garratt, M.A., and Petersen, I.R. (2021).
+\newblock Multi-vehicle formation control and obstacle avoidance using
+  negative-imaginary systems theory.
+\newblock \emph{IFAC Journal of Systems and Control}, 15, 100117.
+\newblock \doi{https://doi.org/10.1016/j.ifacsc.2020.100117}.
+
+\bibitem[{Trejo et~al.(2023)Trejo, Ponsart, Adam-Medina, Valencia-Palomo, and
+  Theilliol}]{Trejo2023}
+Trejo, J.A.V., Ponsart, J.C., Adam-Medina, M., Valencia-Palomo, G., and
+  Theilliol, D. (2023).
+\newblock Distributed observer-based leader-following consensus control for lpv
+  multi-agent systems: Application to multiple vtol-uavs formation control.
+\newblock In \emph{2023 International Conference on Unmanned Aircraft Systems
+  (ICUAS)}, 1316--1323.
+\newblock \doi{10.1109/ICUAS57906.2023.10156012}.
+
+\bibitem[{Wang et~al.(2020)Wang, Qiu, Liu, Pu, and Yi}]{WANG20208150}
+Wang, H., Qiu, T., Liu, Z., Pu, Z., and Yi, J. (2020).
+\newblock Multi-agent formation control with obstacles avoidance under
+  restricted communication through graph reinforcement learning.
+\newblock \emph{IFAC-PapersOnLine}, 53(2), 8150--8156.
+\newblock \doi{https://doi.org/10.1016/j.ifacol.2020.12.2300}.
+\newblock 21st IFAC World Congress.
+
+\bibitem[{Yongshen et~al.(2018)Yongshen, Xuerong, Yajun, and
+  Shengdong}]{Yongshen2018}
+Yongshen, L., Xuerong, Y., Yajun, Y., and Shengdong, P. (2018).
+\newblock Formation control of ugvs based on artificial potential field.
+\newblock In \emph{2018 37th Chinese Control Conference (CCC)}, 6830--6835.
+\newblock \doi{10.23919/ChiCC.2018.8483701}.
+
+\bibitem[{Zhong et~al.(2025)Zhong, Tian, Xia, and Liu}]{Zhong2025}
+Zhong, S., Tian, H., Xia, Y., and Liu, H. (2025).
+\newblock Quadrotor formation maneuver control via reinforcement learning.
+\newblock In \emph{2025 44th Chinese Control Conference (CCC)}, 1--6.
+\newblock \doi{10.23919/CCC64809.2025.11179569}.
+
+\end{thebibliography}
