@@ -10,7 +10,7 @@
 \usepackage{graphicx}      % include this line if your document contains figures
 \usepackage{natbib}        % required for bibliography
 \usepackage{xcolor}
-\usepackage{enumitem}      % inline item
+\usepackage{subcaption}
 %===============================================================================
 \begin{document}
 \begin{frontmatter}
@@ -182,9 +182,88 @@ Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
 
 \section{Simulations Results}
 \label{sec:simulation_results}
+\begin{figure}
+    \centering
+   %  \hspace{1cm}
+    \begin{subfigure}{0.3\columnwidth}
+        \includegraphics[height=3cm]{images/dSafe.pdf}
+    \end{subfigure}
+    \hspace{-0.6cm}
+    \begin{subfigure}{0.3\columnwidth}
+        \includegraphics[height=3cm]{images/robot_dSafe.pdf}
+    \end{subfigure}
+    \caption{\textcolor{red}{TODO}}
+    \label{fig:safety_distance}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/with_APF/1st_scenario_with.eps}
+         \caption{Triangle Top}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/with_APF/2nd_scenario_with.eps}
+        \caption{Line Segment}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/with_APF/3rd_scenario_with.eps}
+      \caption{Triangle Right}
+    \end{subfigure}
+    \vspace{-0.2cm}
+    \caption{Trajectories of the three agents with desired and actual interdistances in simulation.}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/wo_APF/1st_scenario_wo.eps}
+        \caption{Triangle Top}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/wo_APF/2nd_scenario_wo.eps}
+        \caption{Line Segment}
+    \end{subfigure}
+    % \hfill
+    \begin{subfigure}[b]{0.32\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/simulations/wo_APF/3rd_scenario_wo.eps}
+        \caption{Triangle Right}
+    \end{subfigure}
+    \vspace{-0.2cm}
+    \caption{Trajectories of the three agents without APF in simulation.}
+\end{figure}
+
 
 \section{Experimental Validation}
 \label{sec:experimental_validation}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.31\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/nominal/1st_scenario_exp.eps}
+        \caption{Triangle Top}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.31\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp.eps}
+      \caption{Line Segment}
+   \end{subfigure}
+    \begin{subfigure}[b]{0.31\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/nominal/3rd_scenario_exp.eps}
+        \caption{Triangle Right}
+      \end{subfigure}
+   \vspace{-0.2cm}
+   \caption{Trajectories of the three agents with desired and actual interdistances in the experiments.}
+\end{figure}
+
 
 \section{Conclusion}
 \label{sec:conclusion}
