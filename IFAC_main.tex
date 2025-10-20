@@ -410,11 +410,141 @@ each agent are as follows:
 \end{equation}
 \label{eq:airground-continous_time-measurement}
 \end{subequations}
-
+The idea is to formulate the robust formation control 
+problem as a dynamic game between two players: 
+one is the control action and the other opponent is 
+the ``nature''.
+In the proposed solution, at each time step $k$ the control 
+action to be applied at the next step $\boldsymbol{u}(k)$
+is obtained by solving the following min-max problem 
+defined over a one-step horizon.
+\begin{equation}
+\footnotesize
+\begin{aligned}
+    \min_{\boldsymbol{u}(k)} \max_{\boldsymbol{e}(k) \neq 0} &  \quad 
+    \frac{J(k)}{\left\lVert \boldsymbol{e}(k)\right\rVert^2_2} \\
+    \textrm{s.t.} \  &\boldsymbol{z}_i(k) = C_i \, \boldsymbol{e}(k) \\
+    \quad & \boldsymbol{u}_{i}(k) = \boldsymbol{\mu}_i(\boldsymbol{z}_i(k)) \quad i \in \{A,1,2\} \\
+\end{aligned}
+\end{equation}
+with
+\begin{equation}
+    \footnotesize
+    J(k) = \boldsymbol{u}(k)^TQ_u\boldsymbol{u}(k)+\boldsymbol{e}(k+1)^TQ_x\boldsymbol{e}(k+1)+\boldsymbol{e}(k)^TQ_x\boldsymbol{e}(k)   
+\end{equation}
+The cost function can be rewritten by substituting the evolution model 
+equation~\eqref{eq:airground-fleet-z}.
+\begin{equation}
+\footnotesize
+    J(k) = \begin{bmatrix}
+        \boldsymbol{e}(k) \\ \boldsymbol{u}(k)
+    \end{bmatrix}^T \begin{bmatrix}
+        Q_x + A_d^T Q_x A_d & A_d^T Q_x B_d \\ 
+        B_d^T Q_x A_d & Q_u + B_d^T Q_x B_d
+    \end{bmatrix}\begin{bmatrix}
+        \boldsymbol{e}(k) \\ \boldsymbol{u}(k)
+    \end{bmatrix}
+\end{equation}
+Hence, the min-max problem to be solved is 
+\begin{equation}
+    % \hspace{-0.22cm}
+    \footnotesize
+\begin{aligned}
+    \min_{\boldsymbol{u}(k)} \max_{\boldsymbol{e}(k) \neq 0} \ & \frac{\begin{bmatrix}
+        \boldsymbol{e}(k) \\ \boldsymbol{u}(k)
+    \end{bmatrix}^T \begin{bmatrix}
+        Q_{xx} & Q_{xu} \\
+        Q_{ux} & Q_{uu}
+    \end{bmatrix}\begin{bmatrix}
+        \boldsymbol{e}(k) \\ \boldsymbol{u}(k)
+    \end{bmatrix}}{\left\lVert \boldsymbol{e}(k)\right\rVert^2_2} \\
+    \textrm{s.t.} \  &\boldsymbol{z}_i(k) = C_i \, \boldsymbol{e}(k) \\
+    \quad & \boldsymbol{u}_{i}(k) = \boldsymbol{\mu}_i(\boldsymbol{z}_i(k)) \quad i \in \{A,1,2\} \\
+\end{aligned}
+\label{eq:minmax_v1}
+\end{equation}
+with
+\begin{eqnarray}
+    Q_{xx} &=& Q_x + A_d^T Q_x A_d \\
+    Q_{xu} &=& A_d^T Q_x B_d,\ Q_{ux} = Q^T_{xu} \\
+    Q_{uu} &=& Q_u + B_d^T Q_x B_d
+\end{eqnarray}
+Note that the problem~\eqref{eq:minmax_v1} has the same form as 
+the one considered by Gattami et al.~\cite{gattami_robust_2012}. 
+\cite{gattami_robust_2012} prove that the linear policy is optimal, i.e.
+\begin{equation}
+    \boldsymbol{u}^\star_{i}(k) = K^\star_i \boldsymbol{z}_{i}(k) \quad i \in \{A,1,2\} 
+\end{equation}
+where the matrices $K^\star_i$ can be obtained by solving 
+the following LMI:
+\begin{equation}
+    \small
+    \begin{split}
+        &\min_{\gamma , K} \gamma \\
+        &\text{s.t.} \quad K = \text{diag}(K_A, K_1, K_2) \\
+        &\quad \left(
+            \begin{matrix}
+                Q_{xx} - \gamma I + Q_{xu} K C + C^T K^T Q_{xu}^T & C^T K^T \\
+                KC & -Q_{uu}^{-1}
+            \end{matrix}
+        \right) \leq 0
+    \end{split}
+    \label{eq:lmi}
+\end{equation}
 
 \subsection{Obstacle Avoidance: APFs}
-
-
+Collisions can still occur when the agents attain the desired shape.
+Moreover, obstacles can be present in the robots' way.
+It is therefore crucial to propose a solution to avoid craches 
+for the experimental validation.
+This is where APFs come to help.
+For simplicity, let us consider at first a scenario where the ground
+is clean and collisions may occur between $R_1$ and $R_2$.
+On one hand, since $R_1$ has the highest priority, 
+there is no need to correct the control action 
+$\boldsymbol{u}^\star_{1}(k)$.
+On the other hand, the robot R2 has to correct 
+its way to avoid the other ground vehicle.
+A repulsive force can be used to attain this,
+with a direction opposite to the vector going from $R_2$ to $R_1$
+and a magnitude as follows:
+\begin{equation}
+    \footnotesize
+    \left\lvert {F}_{12} \right\rvert  = \begin{cases}
+       \left(k_{Rep}/{d_{Rep}}^2\right) \left[\left(1/d_{12}\right) - \left(1/d_{Rep}\right)\right]  \ & d_{12} < d_{Rep}\\
+        0 \ & d_{12} \geq d_{Rep}\\
+\end{cases} 
+\end{equation}
+with $d_{12} = \sqrt{\Delta_{12,x}^2 + \Delta_{12,y}^2}$ and 
+$d_{Rep}$ the distance after which the robot is not influenced 
+by the obstacle.
+The final control inputs for $R_2$ are:
+\begin{equation}
+\begin{aligned}
+    u_{2,x}(k) = u^\star_{2,x}(k) + \frac{1}{2}\,\frac{F_{12,x}(k)}{M}\, \Delta T \\
+    u_{2,y}(k) = u^\star_{2,y}(k) + \frac{1}{2} \frac{F_{12,y}(k)}{M} \, \Delta T
+\end{aligned}
+\end{equation}
+with $M$ the two-wheeled robots mass.
+The same approach can be extended to a scenario with both static and dynamic obstacles.
+Suppose that there are $N$ (static or dynamic) obstacles, 
+then the final control inputs for both unicycles are:
+\begin{equation}
+\begin{aligned}
+    u_{1,x}(k) &= u^\star_{1,x}(k) + \frac{1}{2}\,\frac{
+        \sum^N_{j=1} F_{j1,x}(k)
+        }{M}\, \Delta T \\
+    u_{1,y}(k) &= u^\star_{1,y}(k) + \frac{1}{2} \frac{
+        \sum^N_{j=1} F_{j1,y}(k)
+        }{M} \, \Delta T \\
+    u_{2,x}(k) &= u^\star_{2,x}(k) + \frac{1}{2}\,\frac{
+        F_{12,x}(k) + \sum^N_{j=1} F_{j2,x}(k)
+        }{M}\, \Delta T \\
+    u_{2,y}(k) &= u^\star_{2,y}(k) + \frac{1}{2} \frac{
+        F_{12,y}(k) + \sum^N_{j=1} F_{j2,y}(k)
+        }{M} \, \Delta T
+\end{aligned}
+\end{equation}
 \section{Simulations Results}
 \label{sec:simulation_results}
 \begin{figure}
