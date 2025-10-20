@@ -259,7 +259,7 @@ the gravity $mg$ along the $-k^F$ direction.
 \end{figure}
 Let suppose that the $Z$-controller 
 \begin{equation}
-    T = (r_1 + mg) / (\cos \phi \, \cos \theta)
+    T = (r_1 + mg) / (\cos \phi \cos \theta)
 \end{equation}
 is such that the drone's mass is compensated in a short time
 by $r_1$, i.e. $r_1 \to 0$.
@@ -273,8 +273,113 @@ Then, the translational dynamics simplify to
         \ddot{x}^F_A = -g\theta \\
         \ddot{y}^F_A = g\phi
     \end{cases}
+    \label{eq:drone_t-model}
 \end{equation}
-
+At this point, all the agents can be described by the linear models
+\eqref{eq:unicycle_i_t-model} and~\eqref{eq:drone_t-model}.
+To define the formation problem, let us introduce the quantities
+\begin{subequations}
+    \begin{equation}
+        \Delta_{A1} = \begin{bmatrix}
+            \Delta_{A1,x} & \Delta_{A1, y}
+        \end{bmatrix}^T 
+    \end{equation}
+    \begin{equation}
+        \Delta_{A1,x} = x_{R_1} - x_A = x_{R_1} - y^F_A \  
+    \end{equation}
+    \begin{equation}
+        \Delta_{iA,y} = y_{R_1} - y_A = y_{R_1} - x^F_A
+    \end{equation}
+\end{subequations}
+with $(x_A, y_A)$ the position of the drone w.r.t the inertial frame $\{I\}$,
+\begin{subequations}
+    \begin{equation}
+        \Delta_{A1} = \begin{bmatrix}
+        \Delta_{A1,x} & \Delta_{A1, y}
+    \end{bmatrix}^T 
+    \end{equation}
+    \begin{equation}
+        \Delta_{A1,x} = x_{R_1} - x_A = x_{R_1} - y^F_A
+    \end{equation}
+    \begin{equation}
+        \Delta_{iA,y} = y_{R_1} - y_A = y_{R_1} - x^F_A
+    \end{equation}
+\end{subequations}
+and the desired inter-distances $ \Delta^d_{A1}$, $\Delta^d_{12}$,
+ and the desired position of the drone $(x^d_A, y^d_A)$ w.r.t the inertial 
+ frame $\{I\}$ (constant over time).
+The overall dynamics of the formation's errors are as follows
+\begin{equation}
+\begin{cases}
+    \ddot{e}_{A,x} = - g \theta \\
+    \ddot{e}_{A,y} = g \phi \\
+    \dot{e}_{\Delta_{A1,x}} = u_{1,x}  - \dot{e}_{A,y} \\
+    \dot{e}_{\Delta_{A1,y}} = u_{1,y}  - \dot{e}_{A,x} \\
+    \dot{e}_{\Delta_{12, x}} = u_{2,x}  - u_{1,x} \\
+    \dot{e}_{\Delta_{12, y}} = u_{2,y}  - u_{1,y}
+\end{cases}
+\label{eq:airground-continous_time-sys}
+\end{equation}
+with 
+\begin{equation}
+e_{A,x} = x^F_A - y^d_A, \ e_{A,y} = y^F_A - x^d_A
+\end{equation}
+\begin{equation}
+e_{\Delta_{A1,x}} = \Delta_{A1,x} - \Delta^d_{A1,x}, \ 
+e_{\Delta_{A1,y}} = \Delta_{A1,y} - \Delta^d_{A1,y}
+\end{equation}
+\begin{equation}
+e_{\Delta_{12,x}} = \Delta_{12,x} - \Delta^d_{12,x}, \ 
+e_{\Delta_{12,y}} = \Delta_{12,y} - \Delta^d_{12,y}
+\end{equation}
+Let us define the state vector control inputs of each agent as follows
+\begin{subequations}
+    \begin{equation}
+        \footnotesize
+        \boldsymbol{e}^T = \begin{bmatrix}
+            e_{A,x} & \dot{e}_{A,x} & e_{A,y} & \dot{e}_{A,y} 
+            & e_{\Delta_{A1,x}} & e_{\Delta_{A1,y}}
+            & e_{\Delta_{12,x}} & e_{\Delta_{12,y}}
+        \end{bmatrix}
+    \end{equation}
+    \begin{equation}
+        \boldsymbol{u}_A = \begin{bmatrix}
+            \phi  \\ \theta 
+        \end{bmatrix}, \
+        \boldsymbol{u}_1 = \begin{bmatrix}
+            u_{1,x} \\ u_{1,y}
+        \end{bmatrix}, \ 
+        \boldsymbol{u}_2 = \begin{bmatrix}
+            u_{2,x} \\ u_{2,y}
+        \end{bmatrix}, 
+        \boldsymbol{u} = \begin{bmatrix}
+            \boldsymbol{u}_A \\ \boldsymbol{u}_1 \\  \boldsymbol{u}_2
+        \end{bmatrix}
+        \label{eq:airground-continous_time-controls}
+    \end{equation}
+\end{subequations}
+Hence, the heterogeneous fleet's dynamics can be written in a matrix form:
+\begin{equation}
+    \dot{\boldsymbol{e}} = A \boldsymbol{e} + B \boldsymbol{u}
+\end{equation}
+By discretizing with sampling time $\Delta T$ using the Euler method:
+\begin{equation}
+    \boldsymbol{e}(k+1) = A_d \boldsymbol{e}(k) + B_d \boldsymbol{u}(k) 
+    \label{eq:airground-fleet-z}
+\end{equation}
+with $A_d = I + \Delta T A $ and $B_d = \Delta T B$.
+To model real-world disturbances, it is assumed 
+that an addictive zero-mean disturbance $\boldsymbol{d}(k)$
+is acting on the input channel, i.e.
+\begin{equation}
+    \boldsymbol{e}(k+1) = A_d \boldsymbol{e}(k) + B_d \boldsymbol{u}(k) + B_d \boldsymbol{d}(k)
+    \label{eq:airground-fleet-z}
+\end{equation}
+Let us make the following hypothesis: 
+a) the drone knows its position;
+b) the robot $R_1$ knows its position w.r.t the quadcopter;
+c) the robot $R_2$ knows its position w.r.t the other agent $R_1$;
+d) all unicycles are aware of their distance from any obstacles on the ground.
 \section{Formation Controller}
 \label{sec:formation_controller}
 
