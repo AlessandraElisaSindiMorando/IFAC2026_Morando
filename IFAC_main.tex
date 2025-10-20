@@ -387,7 +387,30 @@ This section aims to detail the proposed formation controller.
 The two crucial issues, formation maintenance and collision avoidance, 
 are addressed respectively in the next two subsections.
 
+
 \subsection{Formation Maintenance: an LMI Approach}
+The first goal is to ensure the robots achieve the desired shape 
+while using only local measurements 
+and counteracting the worst-case disturbance.
+Based on the previous hypotheses, the measurements of 
+each agent are as follows:
+\begin{subequations}
+    \begin{equation}
+    \boldsymbol{z}_A = \begin{bmatrix}
+        e_{A,x}  \\ e_{A,y} \\ \dot{e}_{A,x} \\ \dot{e}_{A,x}
+    \end{bmatrix}= C_A \, \boldsymbol{e}
+\end{equation}
+\begin{equation}
+    \boldsymbol{z}_1 = \begin{bmatrix}
+        e_{\Delta_{A1,x}} \\ e_{\Delta_{A1,y}}
+    \end{bmatrix} = C_1 \, \boldsymbol{e}, \  
+     \boldsymbol{z}_2 = \begin{bmatrix}
+        e_{\Delta_{12,x}} \\ e_{\Delta_{12,y}}
+    \end{bmatrix} = C_2 \, \boldsymbol{e}
+\end{equation}
+\label{eq:airground-continous_time-measurement}
+\end{subequations}
+
 
 \subsection{Obstacle Avoidance: APFs}
 
