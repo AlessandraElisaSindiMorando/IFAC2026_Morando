@@ -22,10 +22,10 @@
 % Title, preferably not more than 10 words.
 
 \author[First,Second]{Alessandra Elisa Sindi Morando} 
+\author[Second]{Jossué Cari\~no}
 \author[Second]{Pedro Castillo} 
 \author[First]{Roberto Sacile}
 \author[First]{Enrico Zero}
-\author[First,Second]{\textcolor{red}{?}}
 
 \address[First]{
    \textit{University of Genoa}, Genoa, Italy \\
@@ -33,7 +33,7 @@
 }
 \address[Second]{
    \textit{Université de technologie de Compiègne}, CNRS, Heudiasyc, Compiègne, France \\
-   alessandra-elisa-sindi.morando@utc.fr, pedro.castillo@hds.utc.fr
+   alessandra-elisa-sindi.morando@utc.fr, \{jossue.escobar, pedro.castillo\}@hds.utc.fr
 }
 
 \begin{abstract}                % Abstract of 50--100 words
@@ -210,9 +210,9 @@ First, let us assume that there is an inner attitude controller.
 Hence, the focus is only on the translational dynamics which are:
 \begin{equation}
     \begin{cases}
-        \ddot{x}^F_A = - T \sin \theta \\
-        \ddot{y}^F_A = T \cos \theta \sin \phi \\
-        \ddot{z}^F_A = T \cos \theta \cos \phi  - m\, g\\
+        m\ddot{x}^F_A = - T \sin \theta \\
+        m\ddot{y}^F_A = T \cos \theta \sin \phi \\
+        m\ddot{z}^F_A = T \cos \theta \cos \phi  - m\, g\\
     \end{cases}
 \end{equation}
 Let analyze the equations with the help of Fig.~\ref{fig:drone_roll_pitch_frames}.
@@ -222,34 +222,34 @@ to implement the controller for the drone, see Section~\ref{sec:experimental_val
 The angles $\phi$ and $\theta$ are the roll and pitch Euler angles 
 of the body frame $\{B\}$ (fixed to the drone) relative to the inertial
 frame $\{F\}$.
-
-\textcolor{red}{Spiegare brevemente T, m ,g , cambia figure per essere coerente nella notazione}
-
+Ignoring the small body forces, the only forces acting on the drone are 
+the trust produced by the motors $T$ along the $k^B$ direction and 
+the gravity $mg$ along the $-k^F$ direction.
 \begin{figure}
     \centering
     \begin{subfigure}{0.31\columnwidth}
         % trim = left bottom right top (in points or any unit)
         \hspace{0.5cm}
-        \includegraphics[trim={1.2cm 0.5cm 2.5cm 0.5cm}, clip, width=3cm]{images/drone_topView.png}
+        \includegraphics[trim={0.8cm 2cm 0cm 2cm}, clip, width=3cm]{images/drone_fromAbove2.png}
         % \caption{Drone's body frame $B$ and FL-AIR frame $F$.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.31\columnwidth}
         \hspace{0.5cm}
         % \includegraphics[trim={0.8cm 0.4cm 0cm 0.5cm}, clip, width=3cm]{images/drone_roll.png}
-        \vspace{-1.3cm}
-        \includegraphics[trim={0cm 0cm 0.5cm 0cm}, clip, width=3cm]{images/drone_roll.png}
-        \vspace{0.7cm}
+        % \vspace{-1.3cm}
+        \includegraphics[trim={0cm 0cm 0.5cm 0cm}, clip, width=3cm]{images/drone_roll3.png}
+        % \vspace{0.7cm}
         % \caption{Roll $\phi$ w.r.t  the frame $B$.\\}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.31\columnwidth}
         \hspace{0.3cm}
-        % \vspace{-1.2cm}
+        \vspace{0.5cm}
         % \includegraphics[trim={0cm 0cm 0.5cm 0cm}, clip, width=3cm]{images/drone_pitch.png}
         % \vspace{0.9cm}
         % \vspace{-0.01cm}
-        \includegraphics[trim={0.8cm 0.1cm 0cm 0.5cm}, clip, width=3cm]{images/drone_pitch.png}
+        \includegraphics[trim={0.8cm 0.1cm 0cm 0.5cm}, clip, width=3cm]{images/drone_pitch2.png}
         % \vspace{0.1cm}
         % \vspace{0.9cm}
         % \caption{Pitch $\theta$ w.r.t  the frame $B$.\\}
@@ -257,32 +257,6 @@ frame $\{F\}$.
     \caption{Quadcopter's roll $\phi$ and pitch $\theta$ angles.} 
     \label{fig:drone_roll_pitch_frames}
 \end{figure}
-
-% \begin{figure}
-%     \centering
-%     \begin{subfigure}{0.31\columnwidth}
-%         \hspace{0.5cm}
-%         \includegraphics[width=3cm]{images/drone_topView.png}
-%         \caption{Drone's body frame $B$ and FL-AIR frame $F$.}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}{0.31\columnwidth}
-%         \hspace{0.5cm}
-%         \includegraphics[width=3cm]{images/roll_drone.png}
-%         \caption{Roll $\phi$ w.r.t  the frame $B$.}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}{0.31\columnwidth}
-%         \hspace{0.3cm}
-%         \vspace{-0.2cm}
-%         \includegraphics[width=3cm]{images/pitch_drone.png}
-%         \vspace{-0.3cm}
-%         \caption{Pitch $\theta$ w.r.t  the frame $B$.\\}
-%     \end{subfigure}
-%     \caption{Quadcopter's orientation.} 
-%     \label{fig:drone_roll_pitch_frames}
-% \end{figure}
-
 Secondly, let suppose that the $Z$-controller is 
 such that the drone's mass is compensated in a short time.
 This implies that the $(x,y)$-dynamics will not include the mass of the drone.
@@ -307,7 +281,6 @@ as it is assumed that the $Z$-controller already compensated it.
     \caption{\textcolor{red}{TODO}}
     \label{fig:safety_distance}
 \end{figure}
-
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
