@@ -257,11 +257,23 @@ the gravity $mg$ along the $-k^F$ direction.
     \caption{Quadcopter's roll $\phi$ and pitch $\theta$ angles.} 
     \label{fig:drone_roll_pitch_frames}
 \end{figure}
-Secondly, let suppose that the $Z$-controller is 
-such that the drone's mass is compensated in a short time.
+Let suppose that the $Z$-controller 
+\begin{equation}
+    T = (r_1 + mg) / (\cos \phi \, \cos \theta)
+\end{equation}
+is such that the drone's mass is compensated in a short time
+by $r_1$, i.e. $r_1 \to 0$.
 This implies that the $(x,y)$-dynamics will not include the mass of the drone.
 as it is assumed that the $Z$-controller already compensated it.
-
+Finally, let us make the hypothesis that the roll and pitch angles 
+are small, i.e. $\phi,\theta \approx 0$.
+Then, the translational dynamics simplify to 
+\begin{equation}
+    \begin{cases}
+        \ddot{x}^F_A = -g\theta \\
+        \ddot{y}^F_A = g\phi
+    \end{cases}
+\end{equation}
 
 \section{Formation Controller}
 \label{sec:formation_controller}
