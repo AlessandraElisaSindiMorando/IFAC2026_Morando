@@ -204,8 +204,7 @@ the dynamics become linear:
         \dot{y}_{R_i} = u_{i,y} \\
     \end{cases}
 \end{equation}
-Moving on to the drone, as in the formation problem the focus in 
-on the $(X,Y)$-dynamics, some simplifying hypothesis have been made.
+Moving on to the drone, as in the formation problem deals with the $(X,Y)$-dynamics, some simplifying hypothesis have been made.
 First, let us assume that there is an inner attitude controller.
 Hence, the focus is only on the translational dynamics which are:
 \begin{equation}
@@ -263,8 +262,8 @@ Let suppose that the $Z$-controller
 \end{equation}
 is such that the drone's mass is compensated in a short time
 by $r_1$, i.e. $r_1 \to 0$.
-This implies that the $(x,y)$-dynamics will not include the mass of the drone.
-as it is assumed that the $Z$-controller already compensated it.
+This implies that the $(x,y)$-dynamics will not include the mass of the drone,
+as the $Z$-controller already compensated it.
 Finally, let us make the hypothesis that the roll and pitch angles 
 are small, i.e. $\phi,\theta \approx 0$.
 Then, the translational dynamics simplify to 
@@ -305,7 +304,7 @@ with $(x_A, y_A)$ the position of the drone w.r.t the inertial frame $\{I\}$,
         \Delta_{iA,y} = y_{R_1} - y_A = y_{R_1} - x^F_A
     \end{equation}
 \end{subequations}
-and the desired inter-distances $ \Delta^d_{A1}$, $\Delta^d_{12}$,
+the desired inter-distances $ \Delta^d_{A1}$ and $\Delta^d_{12}$,
  and the desired position of the drone $(x^d_A, y^d_A)$ w.r.t the inertial 
  frame $\{I\}$ (constant over time).
 The overall dynamics of the formation's errors are as follows
@@ -332,7 +331,7 @@ e_{\Delta_{A1,y}} = \Delta_{A1,y} - \Delta^d_{A1,y}
 e_{\Delta_{12,x}} = \Delta_{12,x} - \Delta^d_{12,x}, \ 
 e_{\Delta_{12,y}} = \Delta_{12,y} - \Delta^d_{12,y}
 \end{equation}
-Let us define the state vector control inputs of each agent as follows
+Let us define the state and control vectors as follows
 \begin{subequations}
     \begin{equation}
         \footnotesize
