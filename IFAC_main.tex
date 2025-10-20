@@ -12,6 +12,7 @@
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{siunitx}
+\usepackage{amsmath,amssymb,amsfonts} 
 %===============================================================================
 \begin{document}
 \begin{frontmatter}
@@ -24,6 +25,7 @@
 \author[Second]{Pedro Castillo} 
 \author[First]{Roberto Sacile}
 \author[First]{Enrico Zero}
+\author[First,Second]{\textcolor{red}{?}}
 
 \address[First]{
    \textit{University of Genoa}, Genoa, Italy \\
@@ -169,14 +171,123 @@ Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
 
 \section{Heterogeneous Fleet Modeling}
 \label{sec:heterogeneous_fleet_modeling}
-
+In this section, the dynamics of the agents composing the team
+(i.e., of the two unicycles and the quadrotor, as shown in Fig.~\ref{fig:airground-fleet}.)
+are described and adapted to then apply the LMI approach.
 \begin{figure}
     \centering
    %  \includegraphics[height=6cm]{images/heterogenous_fleet.pdf}
-    \includegraphics[height=6cm]{images/heterogenous_fleet_PNG300.png}
+    \includegraphics[height=6.1cm]{images/heterogenous_fleet_PNG300_2.png}
     \caption{Air-ground heterogeneous fleet.}
     \label{fig:airground-fleet}
 \end{figure}
+The well-known kinematic model of a two-wheeled robot $R_i$ is
+\begin{equation}
+    \begin{cases}
+        \dot{x}_i &= v_i \, \cos\theta_i \\
+        \dot{y}_i &= v_i \, \sin\theta_i \\
+        \dot{\theta}_i &= \omega_i
+    \end{cases}
+    \label{eq:unicycle_i_t-model}
+\end{equation}
+where $(x_i, y_i, \theta_i)$ is the pose of the agent 
+and $(v_i, \omega_i)$ are the linear and
+angular velocities respectively.
+The equations~\eqref{eq:unicycle_i_t-model} describing the motion of the center of rotation are non-linear.
+But still, if a point located at distance $R > 0$ from 
+$(x_i, y_i)$ denote as $({x}_{R_i}, {y}_{R_i})$, is 
+considered and new virtual inputs are defined $(u_{i,x},u_{i,y})$, 
+the dynamics become linear:
+\begin{equation}
+    \begin{cases}
+        \dot{x}_{R_i} = u_{i,x} \\
+        \dot{y}_{R_i} = u_{i,y} \\
+    \end{cases}
+\end{equation}
+Moving on to the drone, as in the formation problem the focus in 
+on the $(X,Y)$-dynamics, some simplifying hypothesis have been made.
+First, let us assume that there is an inner attitude controller.
+Hence, the focus is only on the translational dynamics which are:
+\begin{equation}
+    \begin{cases}
+        \ddot{x}^F_A = - T \sin \theta \\
+        \ddot{y}^F_A = T \cos \theta \sin \phi \\
+        \ddot{z}^F_A = T \cos \theta \cos \phi  - m\, g\\
+    \end{cases}
+\end{equation}
+Let analyze the equations with the help of Fig.~\ref{fig:drone_roll_pitch_frames}.
+The state $({x}^F_A,{y}^F_A,{z}^F_A)$ represents the position of the drone w.r.t. the inertial frame $\{F\}$.
+The frame $\{F\}$ has been used instead of $\{I\}$ to be aligned with the framework employed 
+to implement the controller for the drone, see Section~\ref{sec:experimental_validation}.
+The angles $\phi$ and $\theta$ are the roll and pitch Euler angles 
+of the body frame $\{B\}$ (fixed to the drone) relative to the inertial
+frame $\{F\}$.
+
+\textcolor{red}{Spiegare brevemente T, m ,g , cambia figure per essere coerente nella notazione}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.31\columnwidth}
+        % trim = left bottom right top (in points or any unit)
+        \hspace{0.5cm}
+        \includegraphics[trim={1.2cm 0.5cm 2.5cm 0.5cm}, clip, width=3cm]{images/drone_topView.png}
+        % \caption{Drone's body frame $B$ and FL-AIR frame $F$.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\columnwidth}
+        \hspace{0.5cm}
+        % \includegraphics[trim={0.8cm 0.4cm 0cm 0.5cm}, clip, width=3cm]{images/drone_roll.png}
+        \vspace{-1.3cm}
+        \includegraphics[trim={0cm 0cm 0.5cm 0cm}, clip, width=3cm]{images/drone_roll.png}
+        \vspace{0.7cm}
+        % \caption{Roll $\phi$ w.r.t  the frame $B$.\\}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.31\columnwidth}
+        \hspace{0.3cm}
+        % \vspace{-1.2cm}
+        % \includegraphics[trim={0cm 0cm 0.5cm 0cm}, clip, width=3cm]{images/drone_pitch.png}
+        % \vspace{0.9cm}
+        % \vspace{-0.01cm}
+        \includegraphics[trim={0.8cm 0.1cm 0cm 0.5cm}, clip, width=3cm]{images/drone_pitch.png}
+        % \vspace{0.1cm}
+        % \vspace{0.9cm}
+        % \caption{Pitch $\theta$ w.r.t  the frame $B$.\\}
+    \end{subfigure}
+    \caption{Quadcopter's roll $\phi$ and pitch $\theta$ angles.} 
+    \label{fig:drone_roll_pitch_frames}
+\end{figure}
+
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}{0.31\columnwidth}
+%         \hspace{0.5cm}
+%         \includegraphics[width=3cm]{images/drone_topView.png}
+%         \caption{Drone's body frame $B$ and FL-AIR frame $F$.}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}{0.31\columnwidth}
+%         \hspace{0.5cm}
+%         \includegraphics[width=3cm]{images/roll_drone.png}
+%         \caption{Roll $\phi$ w.r.t  the frame $B$.}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}{0.31\columnwidth}
+%         \hspace{0.3cm}
+%         \vspace{-0.2cm}
+%         \includegraphics[width=3cm]{images/pitch_drone.png}
+%         \vspace{-0.3cm}
+%         \caption{Pitch $\theta$ w.r.t  the frame $B$.\\}
+%     \end{subfigure}
+%     \caption{Quadcopter's orientation.} 
+%     \label{fig:drone_roll_pitch_frames}
+% \end{figure}
+
+Secondly, let suppose that the $Z$-controller is 
+such that the drone's mass is compensated in a short time.
+This implies that the $(x,y)$-dynamics will not include the mass of the drone.
+as it is assumed that the $Z$-controller already compensated it.
+
 
 \section{Formation Controller}
 \label{sec:formation_controller}
@@ -243,7 +354,7 @@ Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
 
 \section{Experimental Validation}
 \label{sec:experimental_validation}
-\textcolor{red}{pensa se incrementare $\varepsilon$ a 20cm invece di 17cm}
+\textcolor{red}{dire che usi FL-AIR per il drone, pensa se incrementare $\varepsilon$ a 20cm invece di 17cm}
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.31\columnwidth}
