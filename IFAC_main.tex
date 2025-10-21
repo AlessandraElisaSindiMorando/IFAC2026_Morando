@@ -410,6 +410,7 @@ each agent are as follows:
 \end{equation}
 \label{eq:airground-continous_time-measurement}
 \end{subequations}
+with $C_A$, $C_1$, and $C_2$ the measurement matrices of the three.
 The idea is to formulate the robust formation control 
 problem as a dynamic game between two players: 
 one is the control action and the other opponent is 
@@ -464,14 +465,15 @@ Hence, the min-max problem to be solved is
 \label{eq:minmax_v1}
 \end{equation}
 with
+\vspace{-0.6cm}
 \begin{eqnarray}
     Q_{xx} &=& Q_x + A_d^T Q_x A_d \\
     Q_{xu} &=& A_d^T Q_x B_d,\ Q_{ux} = Q^T_{xu} \\
     Q_{uu} &=& Q_u + B_d^T Q_x B_d
 \end{eqnarray}
 Note that the problem~\eqref{eq:minmax_v1} has the same form as 
-the one considered by Gattami et al.~\cite{gattami_robust_2012}. 
-\cite{gattami_robust_2012} prove that the linear policy is optimal, i.e.
+the one considered by~\cite{gattami_robust_2012} in their paper
+where they prove that the linear policy is optimal, i.e.
 \begin{equation}
     \boldsymbol{u}^\star_{i}(k) = K^\star_i \boldsymbol{z}_{i}(k) \quad i \in \{A,1,2\} 
 \end{equation}
