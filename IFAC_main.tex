@@ -401,6 +401,7 @@ each agent are as follows:
     \boldsymbol{z}_A = \begin{bmatrix}
         e_{A,x}  \\ e_{A,y} \\ \dot{e}_{A,x} \\ \dot{e}_{A,x}
     \end{bmatrix}= C_A \, \boldsymbol{e}
+    \label{eq:measurement_drone}
 \end{equation}
 \begin{equation}
     \boldsymbol{z}_1 = \begin{bmatrix}
@@ -495,6 +496,7 @@ the following LMI:
     \end{split}
     \label{eq:lmi}
 \end{equation}
+where $C$ is the matrix obtained by stacking the single $C_i$.
 To conclude, please note that since the discrete-time system is time-invariant, 
 the min-max problem \eqref{eq:minmax_v1} to be solved  will be the same at each iteration.
 Hence, it is sufficient to solve the LMI~\eqref{eq:lmi} offline one time to obtain 
@@ -618,7 +620,8 @@ check Fig.~\ref{fig:poles-simulation}.
     \begin{subfigure}[b]{0.3\columnwidth}
         \includegraphics[height=3.2cm]{images/simulations/poles_simulations_zoom.eps}
     \end{subfigure}
-    \caption{Poles of the closed-loop system in the imaginary plane}
+    \vspace{-0.3cm}
+    \caption{Poles of the closed-loop system in the imaginary plane.}
     \label{fig:poles-simulation}
 \end{figure}
 % \textcolor{red}{change label for axes to X,Y. How to deal with 
@@ -799,37 +802,160 @@ a ground station (i.e., the same laptop used for the simulations) that was then 
 For controlling the quadcopter, the implementation of the inner controller 
 has been done using the FL-AIR framework.
 
-\textcolor{red}{pensa 
-se incrementare $\varepsilon$ a 20cm invece di 17cm e rifare 
-i plot come nelle simulazioni (stelle e XY)}
+Initially, some preliminary tests were run using the gains used in the simulations,
+but the drone presented unwanted oscillations.
+Making an analogy with a PD controller, we would like indeed the gain $K^\star_A$
+to have the following shape:
+\begin{equation}
+    \begin{bmatrix}
+        0  &  -K_P    &  0  &  -K_D \\
+        K_P &     0       & K_D &      0
+    \end{bmatrix}
+    \label{eq:desired_shape_KA*}
+\end{equation}
+Which is equivalent to two PD controllers, one for 
+the $X$-dynamic and one for the $Y$-dynamic.
+Moreover, when tuning experimentally a PD attitude controller 
+for the quadcopter, good  performance was obtained 
+with $K_D \approx 1.222 K_P = \alpha K_P$.
+As tuning the weighting matrices to achieve the structure 
+in~\eqref{eq:desired_shape_KA*} isn't trivial with the current definition of 
+$\boldsymbol{z}_A$ in \eqref{eq:measurement_drone}, 
+the drone's measurement has been redefined to enforce this form, as follows:
+\begin{equation}
+    \boldsymbol{z}^{'}_A = \begin{bmatrix}
+        e_{A,x} + \alpha \, \dot{e}_{A,x} \\ 
+        - e_{A,y} - \alpha \, \dot{e}_{A,x}
+    \end{bmatrix} = C^{'}_A \, \boldsymbol{e}
+\end{equation}
+The min-max problem~\eqref{eq:minmax_v1} has been consequently changed to:
+\begin{equation}
+    \footnotesize
+\begin{aligned}
+    \min_{\boldsymbol{u}(k)} & \max_{\boldsymbol{e}(k) \neq 0} \ \frac{
+    J(k)}{\left\lVert \boldsymbol{e}(k)\right\rVert^2_2} \\
+    \textrm{s.t.} \  &\boldsymbol{z}^{'}_A(k) = C^{'}_A \, \boldsymbol{e}(k) \\
+    \quad &\boldsymbol{z}_i(k) = C_i \, \boldsymbol{e}(k) \quad i \in \{1,2\} \\
+    \quad & \boldsymbol{u}_{A}(k) = \boldsymbol{\mu}_A(\boldsymbol{z}^{'}_A(k))\\
+    \quad & \boldsymbol{u}_{i}(k) = \boldsymbol{\mu}_i(\boldsymbol{z}_i(k)) \quad i \in \{1,2\} \\
+    % \quad & \boldsymbol{u}_{2}(k) = \boldsymbol{\mu}_2(\boldsymbol{z}_2(k))\\
+\end{aligned}
+\label{eq:minmax_v2}
+\end{equation}
+With this new formulation, the weighting matrices have been chosen, 
+following a tuning phase, as:
+\begin{subequations}
+    \begin{equation}
+        Q_e = \text{diag}(971.10, 971.10, 1000, 1000, 35,35,40,40)
+    \end{equation} 
+    \begin{equation}
+        Q_u = \text{diag}(0.01,0.01, 0.08, 0.08, 0.08, 0.08)
+    \end{equation} 
+\end{subequations}
+The resulting optimal gain matrices are 
+\begin{eqnarray}
+    K^{'\star}_A &=& \begin{bmatrix}
+        -0.1258 &  0  \\
+         0 &  0.1258
+    \end{bmatrix}\\
+    K^{\star}_1 &=& \begin{bmatrix}
+        -7.8261 & 0 \\
+         0   & -7.8261
+    \end{bmatrix}\\
+    K^\star_2 &=& \begin{bmatrix}
+        -8.2934  & 0 \\
+         0   & -8.2934 
+    \end{bmatrix}
+\end{eqnarray}
+while the eigenvalues in closed-loop are:
+\begin{equation}
+    \small
+    p^{'} = \text{eig}(A_d + B_d \, K^{'\star} \, C^{'}) = 
+    \begin{cases}
+        0.8341 \ & \mu = 2\\
+        0.8435 \ & \mu = 2\\
+        0.9849 +  0.0163\boldsymbol{i} \  &   \mu = 2\\
+        0.9849 -  0.0163\boldsymbol{i} \  &   \mu = 2
+    \end{cases}
+\end{equation}
+which are again inside the unitary circle, 
+as shown in Fig~\ref{fig:poles-simulation-v2}.
+\begin{figure}
+    \centering
+    \includegraphics[height=3cm]{images/experiment/poles_experiment_zoom.eps}
+    \vspace{-0.3cm}
+    \caption{Poles of the closed-loop system in the imaginary plane with the new 
+    drone's measurement definition.}
+    \label{fig:poles-simulation-v2}
+\end{figure}
+
+The first experiments have been conducted with ground free of obstacles.
+The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/nominal/1st_scenario_exp.eps}
+        \includegraphics[width=\linewidth]{images/experiment/nominal/1st_scenario_exp_bigger.eps}
         \caption{Triangle Top}
     \end{subfigure}
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp.eps}
+        \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp_bigger.eps}
       \caption{Line Segment}
    \end{subfigure}
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/nominal/3rd_scenario_exp.eps}
+        \includegraphics[width=\linewidth]{images/experiment/nominal/3rd_scenario_exp_bigger.eps}
         \caption{Triangle Right}
       \end{subfigure}
    \vspace{-0.2cm}
-   \caption{Trajectories of the three agents with desired and actual interdistances in the experiments.}
+   \caption{Trajectories of the three agents with desired and actual interdistances 
+   in the experiments with the ground clear of obstacles.}
+   \label{fig:exp_noObstacles}
 \end{figure}
+The geometric shape is achieved but the fleet but still 
+the quadrotor is not exactly in the desired position, denoted by the red star.
+The same behaviour has been observed in all the tests, showing that there 
+is still room for improvement.
+As it will be discussed in Section~\ref{sec:conclusion}, a possible solution is to also include 
+in the dynamics an integral action both in X and Y.
+The robots $G_1$ and $G_2$, however, keep the desired distances from the drone and from G2, 
+respectively.
+For these reasons, the final shape of the team (dotted black line) in Fig.~\ref{fig:exp_noObstacles}
+mantains the correct shape and orientation but translated from the desired configuration 
+(solid line).
+Moreover, even if the desired final positions are inverted w.r.t the initial 
+positions of the ground vehicles, they do not collide.
+For the quantitative analysis, the negligible error 
+has been increased to $\varepsilon = \SI{0.20}{\meter}$.
+With this new definition, the formation is achieved after
+$\bar{t} = \SI{8.92}{\second}$,
+$\bar{t} = \SI{10.04}{\second}$,
+$\bar{t} = \SI{10.34}{\second}$ in the three scenarios respectively.
+A video collecting the three experiments can be found at:\TODO{}.
+At the end, even the ground vehicles appear to oscilllate. 
+This can be explained by the small oscillations of the drone around the desired position, 
+which are then mirrored by the unicycles as they mantain the geometric shape.
+To prove this suppposition, a trial was performed using only the ground robots, 
+while the drone's position was mimicked by applying a constant setpoint 
+throughout the test.
+The plots are not made for the sake of brevity, but the experiment is 
+included in the previous video.
+In the video, it can be seen that once they reach the desired distance 
+from the setpoint, the two Jetbot halt and hold their position.
 
+\textcolor{red}{pensa 
+se incrementare $\varepsilon$ a 20cm invece di 17cm e rifare 
+i plot come nelle simulazioni (stelle e XY)}
+\textcolor{red}{
 Increased $y_A^d$ of $\SI{0.5}{\meter}$, 
 formation reached after \SI{55.30}{\second}(the drone 
 takes some time, but $R_2$ achieve the formation w.r.t 
 $R_1$ after \SI{16.02}{\second}), when swapped
 the formation is achieved after \SI{9.74}{\second} 
 (drone after \SI{8.32}{\second}
-while $R_2$ after \SI{9.74}{\second}).
+while $R_2$ after \SI{9.74}{\second}).}
+
 
 
 \begin{figure}[h!]

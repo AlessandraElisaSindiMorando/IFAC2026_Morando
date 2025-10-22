@@ -40,13 +40,14 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Formation Controller}{3}\protected@file@percent }
 \newlabel{sec:formation_controller}{{3}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Formation Maintenance: an LMI Approach}{3}\protected@file@percent }
+\newlabel{eq:measurement_drone}{{16a}{3}}
 \newlabel{eq:airground-continous_time-measurement}{{16}{3}}
 \newlabel{eq:minmax_v1}{{20}{3}}
 \newlabel{eq:lmi}{{25}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Obstacle Avoidance: APFs}{3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Simulations Results}{4}\protected@file@percent }
 \newlabel{sec:simulation_results}{{4}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Poles of the closed-loop system in the imaginary plane\relax }}{4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Poles of the closed-loop system in the imaginary plane.\relax }}{4}\protected@file@percent }
 \newlabel{fig:poles-simulation}{{4}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The physical robot is contained entirely in a circle of radius $d_{Safe} = \SI {0.13}{\meter }$. Consequently, if the centers of rotation are at a distance less than $2d_{Safe}$ it means that the agents collided.\relax }}{4}\protected@file@percent }
 \newlabel{fig:safety_distance}{{5}{4}}
@@ -58,9 +59,6 @@
 \newlabel{sub@fig:sim_withAPF_noNoise_3}{{c}{4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Trajectories of the three agents with desired and actual interdistances in ideal simulations.\relax }}{4}\protected@file@percent }
 \newlabel{fig:sim_withAPF_noNoise}{{6}{4}}
-\bibdata{bibliography}
-\bibcite{Aditya2023}{{1}{2023}{{Aditya and Werner}}{{}}}
-\bibcite{Deshpande2011}{{2}{2011}{{Deshpande et~al.}}{{Deshpande, Menon, Edwards, and Postlethwaite}}}
 \newlabel{fig:sim_woAPF_noNoise_1}{{7a}{5}}
 \newlabel{sub@fig:sim_woAPF_noNoise_1}{{a}{5}}
 \newlabel{fig:sim_woAPF_noNoise_2}{{7b}{5}}
@@ -73,11 +71,11 @@
 \newlabel{fig:sim_withAPF_noisy}{{8}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Validation}{5}\protected@file@percent }
 \newlabel{sec:experimental_validation}{{5}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Trajectories of the three agents with desired and actual interdistances in the experiments.\relax }}{5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \leavevmode {\color {red}TODO}\relax }}{5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{5}\protected@file@percent }
-\newlabel{sec:conclusion}{{6}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \leavevmode {\color {red}TODO}\relax }}{5}\protected@file@percent }
+\newlabel{eq:desired_shape_KA*}{{34}{5}}
+\newlabel{eq:minmax_v2}{{36}{5}}
+\bibdata{bibliography}
+\bibcite{Aditya2023}{{1}{2023}{{Aditya and Werner}}{{}}}
+\bibcite{Deshpande2011}{{2}{2011}{{Deshpande et~al.}}{{Deshpande, Menon, Edwards, and Postlethwaite}}}
 \bibcite{gattami_robust_2012}{{3}{2012}{{Gattami et~al.}}{{Gattami, Bernhardsson, and Rantzer}}}
 \bibcite{GULER2023105492}{{4}{2023}{{Güler and İsa E.~Yıldırım}}{{}}}
 \bibcite{HAN2024106105}{{5}{2024}{{Han et~al.}}{{Han, Wang, Yan, Li, and Ren}}}
@@ -85,6 +83,14 @@
 \bibcite{LEE200985}{{7}{2009}{{Lee and Chong}}{{}}}
 \bibcite{Maldonado2024}{{8}{2024}{{Maldonado et~al.}}{{Maldonado, Cruz, Abad~Torres, Cruz, and Gamboa~Benitez}}}
 \bibcite{Morando2025SOSE}{{9}{2025}{{Morando et~al.}}{{Morando, Bozzi, Zero, Sacile, and Castillo}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Poles of the closed-loop system in the imaginary plane with the new drone's measurement definition.\relax }}{6}\protected@file@percent }
+\newlabel{fig:poles-simulation-v2}{{9}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Trajectories of the three agents with desired and actual interdistances in the experiments with the ground clear of obstacles.\relax }}{6}\protected@file@percent }
+\newlabel{fig:exp_noObstacles}{{10}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{6}\protected@file@percent }
+\newlabel{sec:conclusion}{{6}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \leavevmode {\color {red}TODO}\relax }}{6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \leavevmode {\color {red}TODO}\relax }}{6}\protected@file@percent }
 \bibcite{Piet2025Control}{{10}{2025}{{Piet et~al.}}{{Piet, Strub, Changey, and Petit}}}
 \bibcite{Restrepo2023}{{11}{2023}{{Restrepo et~al.}}{{Restrepo, Loría, Sarras, and Marzat}}}
 \bibcite{Semsar2009}{{12}{2009}{{Semsar-Kazerooni and Khorasani}}{{}}}
@@ -93,5 +99,5 @@
 \bibcite{WANG20208150}{{15}{2020}{{Wang et~al.}}{{Wang, Qiu, Liu, Pu, and Yi}}}
 \bibcite{Yongshen2018}{{16}{2018}{{Yongshen et~al.}}{{Yongshen, Xuerong, Yajun, and Shengdong}}}
 \bibcite{Zhong2025}{{17}{2025}{{Zhong et~al.}}{{Zhong, Tian, Xia, and Liu}}}
-\global\c@lastpage=6
+\global\c@lastpage=7
 \global\NAT@numbersfalse
