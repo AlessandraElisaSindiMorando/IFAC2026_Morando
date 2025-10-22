@@ -495,6 +495,12 @@ the following LMI:
     \end{split}
     \label{eq:lmi}
 \end{equation}
+To conclude, please note that since the discrete-time system is time-invariant, 
+the min-max problem \eqref{eq:minmax_v1} to be solved  will be the same at each iteration.
+Hence, it is sufficient to solve the LMI~\eqref{eq:lmi} offline one time to obtain 
+the optimal gain matrices $K^\star_i$, and then multiply at each instant $k$ 
+by the local measurement $\boldsymbol{z}_{i}(k)$ by $K^\star_i$ to obtain $\boldsymbol{u}^\star_{i}(k)$.
+% \textcolor{red}{spiega che LMI si deve risolvere una sola volta}
 
 \subsection{Obstacle Avoidance: APFs}
 Collisions can still occur when the agents attain the desired shape.
@@ -553,6 +559,8 @@ then the final control inputs for both unicycles are:
 \label{sec:simulation_results}
 The first validation of the proposed formation 
 controller has been done via simulations in MATLAB R2022a Simulink.
+The simulations have been carried out on a laptop with OS Ubuntu 20.04.6 LTS, 
+equipped with 32 GB of RAM, an SSD NVMe, and a processor Intel Core i7-12800H.
 To choose the parameters, the target robots' characteristics 
 have been taken into account from the beginning 
 in the tuning phase.
@@ -600,7 +608,7 @@ eigenvalues of the closed-loop system
 \end{equation}
 which are all inside the unitary circle,
 check Fig.~\ref{fig:poles-simulation}.
-\begin{figure}[b]
+\begin{figure}
     \centering
     \hspace{-1.5cm}
     \begin{subfigure}[b]{0.3\columnwidth}
@@ -666,7 +674,7 @@ with solid black, while the actual inter distances at the end of the simulation
 are the dotted black lines.
 Finally, stars denote the desired final positions of the robots 
 based on the definitions of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12}$.
-\begin{figure}
+\begin{figure}[b]
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
@@ -779,7 +787,19 @@ $\bar{t} = \SI{112.1}{\second}$ respectively.
 
 \section{Experimental Validation}
 \label{sec:experimental_validation}
-\textcolor{red}{dire che usi FL-AIR per il drone, pensa 
+Once analyzed the simulations and given the promising results, 
+the next step has been to validate the formation control scheme 
+through experiments.
+The tests have been carried out in an indoor arena equipped with
+A motion capture Optitrack system, used to measure the robots' positions.
+For the communication between multi-agents, the TCP protocol and ROS1 Noetic
+facilities have been used.
+The control actions were computed into separate ROS nodes running in 
+a ground station (i.e., the same laptop used for the simulations) that was then sending the commands to the separate robots.
+For controlling the quadcopter, the implementation of the inner controller 
+has been done using the FL-AIR framework.
+
+\textcolor{red}{pensa 
 se incrementare $\varepsilon$ a 20cm invece di 17cm e rifare 
 i plot come nelle simulazioni (stelle e XY)}
 \begin{figure}
@@ -802,8 +822,6 @@ i plot come nelle simulazioni (stelle e XY)}
    \vspace{-0.2cm}
    \caption{Trajectories of the three agents with desired and actual interdistances in the experiments.}
 \end{figure}
-
-For each obstacle, just add a corrective APF term: \textcolor{red}{add formula}
 
 Increased $y_A^d$ of $\SI{0.5}{\meter}$, 
 formation reached after \SI{55.30}{\second}(the drone 
