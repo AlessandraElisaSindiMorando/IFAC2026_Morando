@@ -552,7 +552,7 @@ then the final control inputs for both unicycles are:
 \section{Simulations Results}
 \label{sec:simulation_results}
 The first validation of the proposed formation 
-controller was via simulations in MATLAB R2022a Simulink.
+controller has been done via simulations in MATLAB R2022a Simulink.
 To choose the parameters, the target robots' characteristics 
 have been taken into account from the beginning 
 in the tuning phase.
@@ -616,7 +616,7 @@ check Fig.~\ref{fig:poles-simulation}.
 % \textcolor{red}{change label for axes to X,Y. How to deal with 
 % the legend?Use a star in all the plots for the desired position.}
 Moving to the APFs, the mass of the Jetbot's robot is 
-$\SI{1.4}{\kilo\gram}$ and it has been chosen $k_{Rep} = 700$
+$M = \SI{1.4}{\kilo\gram}$ and it has been chosen $k_{Rep} = 700$
 and $d_{Rep} = 5 \, R$.
 In the simulations, the unicycles are treated as mass points but
 nevertheless the objective is to verify if the physical robots will crash.
@@ -643,7 +643,7 @@ see Fig.~\ref{fig:safety_distance}).
 \end{figure}
 For a quantitative analysis, the time required for the agents to reach 
 the formation was studied.
-Let us define the key performance index the time $\bar{t}$ defined as follows:
+Let us define the key performance index $\bar{t}$ as follows:
 \begin{equation}
     \forall t \geq \bar{t}\ : \
     \left\{\begin{aligned}
@@ -656,16 +656,16 @@ with $\varepsilon$ a negligible error. For the simulations, it has been set
 $\varepsilon = \SI{0.10}{\meter}$.
 
 The first set of simulations considers a scenario with the ground clean 
-and ideally without disturbances, i.e. $\boldsymbol{d}(k) = 0$.
+and without disturbances, i.e. $\boldsymbol{d}(k) = 0$.
 The results are shown in Fig.~\ref{fig:sim_withAPF_noNoise}.
 For each unicycle, they are plotted the 2D-trajectories 
-of the center of rotation and the point $(x_{R_i}, y_{R_i})$ 
+of the center of rotation and of the point $(x_{R_i}, y_{R_i})$ 
 with a solid and a dotted line respectively.
 The desired inter distances drone-$G_1$ and $G_1$-$G_2$ are plotted 
-with solid black while the actual ones at the end of the simulation 
-are plotted with a dotted black line.
+with solid black, while the actual inter distances at the end of the simulation 
+are the dotted black lines.
 Finally, stars denote the desired final positions of the robots 
-based on the definition of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12}$.
+based on the definitions of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12}$.
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
@@ -723,7 +723,7 @@ Fig.~\ref{fig:sim_woAPF_noNoise} displays the resulting trajectories.
          \label{fig:sim_woAPF_noNoise_3}
     \end{subfigure}
     \vspace{-0.2cm}
-    \caption{Trajectories of the three agents without APF in simulation.}
+    \caption{Trajectories of the three agents without APF in ideal simulations.}
     \label{fig:sim_woAPF_noNoise}
 \end{figure}
 In the first case, the curves are the same as Fig.~\ref{fig:sim_withAPF_noNoise_1} since 
@@ -740,7 +740,7 @@ deviates its path to stay at a safe distance from $G_1$.
 
 The last set of simulations aims to study the robustness of the proposed control 
 scheme in the presence of the zero-mean disturbance $\boldsymbol{d}(k)$.
-The disturbance in particular has been modeled in the simulations 
+The disturbance has been modeled in particular 
 as a gaussian noise with variance $\Sigma = 0.1 I_{6\times6}$.
 The results are presented in Fig.~\ref{fig:sim_withAPF_noisy}.
 \begin{figure}
@@ -765,7 +765,7 @@ The results are presented in Fig.~\ref{fig:sim_withAPF_noisy}.
     \label{fig:sim_withAPF_noisy}
 \end{figure}
 The trajectories are similar to the ones in Fig.~\ref{fig:sim_withAPF_noNoise},
-but the agents in the end around the desired final positions due to disturbance $\boldsymbol{d}(k)$
+but the agents in the end oscillate around the desired final positions due to disturbance $\boldsymbol{d}(k)$
 (though they remain within a small neighborhood).
 This is the same reason why the solid and dotted lines do not exactly overlap:
 the dotted shape appears to be a translated version of the solid one.
@@ -779,7 +779,9 @@ $\bar{t} = \SI{112.1}{\second}$ respectively.
 
 \section{Experimental Validation}
 \label{sec:experimental_validation}
-\textcolor{red}{dire che usi FL-AIR per il drone, pensa se incrementare $\varepsilon$ a 20cm invece di 17cm}
+\textcolor{red}{dire che usi FL-AIR per il drone, pensa 
+se incrementare $\varepsilon$ a 20cm invece di 17cm e rifare 
+i plot come nelle simulazioni (stelle e XY)}
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.31\columnwidth}
