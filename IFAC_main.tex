@@ -504,7 +504,7 @@ the optimal gain matrices $K^\star_i$, and then multiply at each instant $k$
 by the local measurement $\boldsymbol{z}_{i}(k)$ by $K^\star_i$ to obtain $\boldsymbol{u}^\star_{i}(k)$.
 % \textcolor{red}{spiega che LMI si deve risolvere una sola volta}
 
-\subsection{Obstacle Avoidance: APFs}
+\subsection{Collision and Obstacle Avoidance: APFs}
 Collisions can still occur when the agents attain the desired shape.
 Moreover, obstacles can be present in the robots' way.
 It is therefore crucial to propose a solution to avoid craches 
@@ -897,16 +897,19 @@ The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
         \centering
         \includegraphics[width=\linewidth]{images/experiment/nominal/1st_scenario_exp_bigger.eps}
         \caption{Triangle Top}
+        \label{fig:exp_noObstacles_1}
     \end{subfigure}
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp_bigger.eps}
       \caption{Line Segment}
+      \label{fig:exp_noObstacles_2}
    \end{subfigure}
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/nominal/3rd_scenario_exp_bigger.eps}
         \caption{Triangle Right}
+        \label{fig:exp_noObstacles_3}
       \end{subfigure}
    \vspace{-0.2cm}
    \caption{Trajectories of the three agents with desired and actual interdistances 
@@ -944,56 +947,87 @@ included in the previous video.
 In the video, it can be seen that once they reach the desired distance 
 from the setpoint, the two Jetbot halt and hold their position.
 
-\textcolor{red}{pensa 
-se incrementare $\varepsilon$ a 20cm invece di 17cm e rifare 
-i plot come nelle simulazioni (stelle e XY)}
-\textcolor{red}{
-Increased $y_A^d$ of $\SI{0.5}{\meter}$, 
-formation reached after \SI{55.30}{\second}(the drone 
-takes some time, but $R_2$ achieve the formation w.r.t 
-$R_1$ after \SI{16.02}{\second}), when swapped
-the formation is achieved after \SI{9.74}{\second} 
-(drone after \SI{8.32}{\second}
-while $R_2$ after \SI{9.74}{\second}).}
+Once the validation of formation maintenance and collisions 
+prevention was complete, the next aspect to be investigated 
+was obstacle avoidance, both still and in motion.
+To begin, static obstacles were considered.
+Specifically, the first experiment considered the geometric 
+shape and the initial configuration shown in Fig.\ref{fig:exp_noObstacles_1}.
+To be accurate, $y^d_A$ was increased by half a meter; otherwise, 
+the unicycles could not have achieved the formation 
+due to their close proximity to the obstacles.
+Moreover, this time three cones (in Fig.\ref{fig:exp_staticObstacles}, the red squares)
+were placed in front of the robots.
+The resulting trajectories are displayed in Fig.\ref{fig:exp_staticObstacles_right}.
+Let it compare with Fig.\ref{fig:exp_noObstacles_1}.
+In both cases, the geometric shape is formed (in this case $\bar{t} = \SI{15.94}{\second}$)
+without collisions between $G_1$ and $G_2$.
+This time, however, the unicycles have to move avoiding the cones on the ground.
+Consequently, more time is required to reach the formation than 
+in the obstacle-free case.
+On the one hand, without obstructions, $G_1$ and $G_2$ arrive at the desired distance 
+from the drone and $G_1$ in $\bar{t}_1 = \SI{6.60}{\second}$ 
+and $\bar{t}_2 = \SI{8.92}{\second}$, respectively.
+On the other hand, with the three cones, we have 
+$\bar{t}_1 = \SI{9.80}{\second}$ 
+and $\bar{t}_2 = \SI{15.94}{\second}$.
+Moreover, the robot $G_2$ does not go the shortest route towards 
+the green star, but instead approaches it from the right to avoid 
+collisions with $G_1$.
+To confirm this assumption, another experiment was conducted by swapping
+the ground robots at the start so they were already on the right side.
+Fig.~\ref{fig:exp_staticObstacles_left} shows the results.
+As expected, $G_2$ this time avoids the obstacles moving on 
+the right-hand side of the cones.
+As expected, $G_2$ this time avoids the obstacles by moving on 
+the right-hand side of the cones. 
+This is reflected in the key performance indexes:
+$\bar{t} = \SI{9.66}{\second}$,
+$\bar{t}_1 = \SI{8.20}{\second}$, and $\bar{t}_2 = \SI{9.66}{\second}$.
+A video with the two experiments can be seen at:\TODO{}.
 
-
-
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_obs_exp.eps}
+        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_bigger.eps}
         \caption{$R_2$ on the right}
+        \label{fig:exp_staticObstacles_right}
     \end{subfigure}
     \begin{subfigure}[b]{0.31\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_obs_swap.eps}
+        \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger.eps}
         \caption{$R_2$ on the left}
+        \label{fig:exp_staticObstacles_left}
     \end{subfigure}
     \vspace{-0.2cm}
-    \caption{\textcolor{red}{TODO}}
+    \caption{Trajectories of the three agents with desired and actual interdistances 
+   in the experiments with static obstacles.}
+    \label{fig:exp_staticObstacles}
 \end{figure}
 
+\textcolor{red}{ultimo esperimento}
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_far.eps}
+        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps}
          \caption{$\SI{0}{\second} \leq  t \leq \SI{11}{\second}$}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2.eps}
+        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps}
          \caption{$\SI{31}{\second} \leq  t \leq \SI{42}{\second}$}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1.eps}
+        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger.eps}
         \caption{$\SI{56}{\second} \leq  t \leq \SI{63}{\second}$}
     \end{subfigure}
     \vspace{-0.2cm}
-    \caption{\textcolor{red}{TODO}}
+    \caption{Trajectories of the three agents with desired and actual interdistances 
+   in the experiments with a dynamic obstacle.}
 \end{figure}
 
 \section{Conclusion}
