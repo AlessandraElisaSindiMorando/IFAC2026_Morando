@@ -1006,28 +1006,54 @@ A video with the two experiments can be seen at:\TODO{}.
     \label{fig:exp_staticObstacles}
 \end{figure}
 
-\textcolor{red}{ultimo esperimento}
-
+In the final test, the cones were removed but 
+a new ground vehicle playing the role of dynamic obstacles was introduced.
+While the other agents form the desired shape, the robot, guided using  
+a joystick by an operator tries to disrupt the team.
+The geometric shape and the initial positions of 
+the agents are the ones in Fig.\ref{fig:exp_noObstacles_3}.
+To better show and analyze the results, the robots'trajectories are plotted 
+not for the entire test, but for some specific, interesting intervals of time.
+Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
+Initially, the dynamic obstacle is far from the agents,
+allowing them to reach 
+the formation, as in the scenario free of obstacles 
+in Fig.~\ref{fig:exp_noObstacles_3}.
+Let's now see what happens when the jammer gets close to the Jetbots.
+When the four-wheeled robot gets close to $G_2$, this last moves away, 
+breaking the formation to keep a safe distance from the obstacle.
+Still when the jammer goes back to being far apart, 
+$G_2$ will position itself at the desired distance from $G_1$.
+When the obstacle gets close to $G_1$, both the two-wheeled 
+robots start moving but for two different reasons.
+On the one hand, $G_1$ moves to be at a safe distance from the obstacle.
+On the other hand, $G_2$ moves not because it is too close to the obstacle, 
+but to keep the desired distance from $G_1$.
+A video of the test is available at:\TODO{}.
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps}
          \caption{$\SI{0}{\second} \leq  t \leq \SI{11}{\second}$}
+        \label{fig:exp_dynamicObstacles_1}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps}
          \caption{$\SI{31}{\second} \leq  t \leq \SI{42}{\second}$}
+         \label{fig:exp_dynamicObstacles_2}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger.eps}
         \caption{$\SI{56}{\second} \leq  t \leq \SI{63}{\second}$}
+        \label{fig:exp_dynamicObstacles_3}
     \end{subfigure}
     \vspace{-0.2cm}
     \caption{Trajectories of the three agents with desired and actual interdistances 
    in the experiments with a dynamic obstacle.}
+    \label{fig:exp_dynamicObstacles}
 \end{figure}
 
 \section{Conclusion}
