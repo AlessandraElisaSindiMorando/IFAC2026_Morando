@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.8.22)  23 OCT 2025 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.8.22)  24 OCT 2025 18:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -715,10 +715,10 @@ Package pdftex.def Info: images/simulations/with_APF/noisy/3rd_scenario_with_noi
 (pdftex.def)             Requested size: 80.58003pt x 80.96095pt.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 833.
+LaTeX Font Warning: Command \small invalid in math mode on input line 834.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 872.
+LaTeX Font Warning: Command \small invalid in math mode on input line 873.
 
 Package epstopdf Info: Source file: <images/experiment/poles_experiment_zoom.eps>
 (epstopdf)                    date: 2025-10-19 19:07:34
@@ -727,12 +727,12 @@ Package epstopdf Info: Source file: <images/experiment/poles_experiment_zoom.eps
 (epstopdf)                    date: 2025-10-22 11:39:36
 (epstopdf)                    size: 6823 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/poles_experiment_zoom-eps-converted-to.pdf images/experiment/poles_experiment_zoom.eps>
-(epstopdf)             \includegraphics on input line 885.
+(epstopdf)             \includegraphics on input line 886.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/poles_experiment_zoom-eps-converted-to.pdf, id=109, 401.5pt x 263.98625pt>
 File: images/experiment/poles_experiment_zoom-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/poles_experiment_zoom-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/poles_experiment_zoom-eps-converted-to.pdf  used on input line 885.
+Package pdftex.def Info: images/experiment/poles_experiment_zoom-eps-converted-to.pdf  used on input line 886.
 (pdftex.def)             Requested size: 129.81816pt x 85.35826pt.
 Package epstopdf Info: Source file: <images/experiment/nominal/1st_scenario_exp_bigger.eps>
 (epstopdf)                    date: 2025-10-22 13:19:39
@@ -741,12 +741,12 @@ Package epstopdf Info: Source file: <images/experiment/nominal/1st_scenario_exp_
 (epstopdf)                    date: 2025-10-22 13:20:34
 (epstopdf)                    size: 103794 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf images/experiment/nominal/1st_scenario_exp_bigger.eps>
-(epstopdf)             \includegraphics on input line 898.
+(epstopdf)             \includegraphics on input line 899.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf, id=110, 629.35126pt x 633.36626pt>
 File: images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf  used on input line 898.
+Package pdftex.def Info: images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf  used on input line 899.
 (pdftex.def)             Requested size: 78.05951pt x 78.55206pt.
 Package epstopdf Info: Source file: <images/experiment/nominal/2nd_scenario_exp_bigger.eps>
 (epstopdf)                    date: 2025-10-22 13:23:23
@@ -755,12 +755,12 @@ Package epstopdf Info: Source file: <images/experiment/nominal/2nd_scenario_exp_
 (epstopdf)                    date: 2025-10-22 13:25:21
 (epstopdf)                    size: 85999 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf images/experiment/nominal/2nd_scenario_exp_bigger.eps>
-(epstopdf)             \includegraphics on input line 904.
+(epstopdf)             \includegraphics on input line 905.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf, id=111, 629.35126pt x 633.36626pt>
 File: images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf  used on input line 904.
+Package pdftex.def Info: images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf  used on input line 905.
 (pdftex.def)             Requested size: 78.05951pt x 78.55206pt.
 Package epstopdf Info: Source file: <images/experiment/nominal/3rd_scenario_exp_bigger.eps>
 (epstopdf)                    date: 2025-10-23 12:32:05
@@ -769,12 +769,12 @@ Package epstopdf Info: Source file: <images/experiment/nominal/3rd_scenario_exp_
 (epstopdf)                    date: 2025-10-23 12:32:25
 (epstopdf)                    size: 90890 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf images/experiment/nominal/3rd_scenario_exp_bigger.eps>
-(epstopdf)             \includegraphics on input line 910.
+(epstopdf)             \includegraphics on input line 911.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf, id=112, 629.35126pt x 633.36626pt>
 File: images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf  used on input line 910.
+Package pdftex.def Info: images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf  used on input line 911.
 (pdftex.def)             Requested size: 78.05951pt x 78.55206pt.
 [5 </home/marcone/Dropbox/IFAC2026/images/simulations/wo_APF/1st_scenario_wo-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/simulations/wo_APF/2nd_scenario_wo-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/simulations/wo_APF/3rd_scenario_wo-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/simulations/with_APF/noisy/1st_scenario_with_noisy-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/simulations/with_APF/noisy/2nd_scenario_with_noisy-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/simulations/with_APF/noisy/3rd_scenario_with_noisy-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/experiment/static_obstacles/1st_scenario_exp_bigger.eps>
@@ -784,12 +784,12 @@ Package epstopdf Info: Source file: <images/experiment/static_obstacles/1st_scen
 (epstopdf)                    date: 2025-10-23 10:43:48
 (epstopdf)                    size: 126296 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf images/experiment/static_obstacles/1st_scenario_exp_bigger.eps>
-(epstopdf)             \includegraphics on input line 993.
+(epstopdf)             \includegraphics on input line 994.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf, id=147, 629.35126pt x 633.36626pt>
 File: images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf  used on input line 993.
+Package pdftex.def Info: images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf  used on input line 994.
 (pdftex.def)             Requested size: 78.05951pt x 78.55206pt.
 Package epstopdf Info: Source file: <images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger.eps>
 (epstopdf)                    date: 2025-10-23 11:20:30
@@ -798,12 +798,12 @@ Package epstopdf Info: Source file: <images/experiment/static_obstacles/1st_scen
 (epstopdf)                    date: 2025-10-23 11:21:12
 (epstopdf)                    size: 87645 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger.eps>
-(epstopdf)             \includegraphics on input line 999.
+(epstopdf)             \includegraphics on input line 1000.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf, id=148, 620.3175pt x 624.3325pt>
 File: images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf  used on input line 999.
+Package pdftex.def Info: images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf  used on input line 1000.
 (pdftex.def)             Requested size: 78.05951pt x 78.5558pt.
 Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps>
 (epstopdf)                    date: 2025-10-23 12:29:44
@@ -812,12 +812,12 @@ Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamic
 (epstopdf)                    date: 2025-10-23 12:31:21
 (epstopdf)                    size: 71959 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps>
-(epstopdf)             \includegraphics on input line 1022.
+(epstopdf)             \includegraphics on input line 1023.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf, id=149, 629.35126pt x 633.36626pt>
 File: images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf  used on input line 1022.
+Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf  used on input line 1023.
 (pdftex.def)             Requested size: 80.58003pt x 81.0938pt.
 Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps>
 (epstopdf)                    date: 2025-10-23 12:28:30
@@ -826,12 +826,12 @@ Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamic
 (epstopdf)                    date: 2025-10-23 12:31:21
 (epstopdf)                    size: 71439 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps>
-(epstopdf)             \includegraphics on input line 1028.
+(epstopdf)             \includegraphics on input line 1029.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf, id=150, 631.35875pt x 635.37375pt>
 File: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf  used on input line 1028.
+Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf  used on input line 1029.
 (pdftex.def)             Requested size: 80.58003pt x 81.08907pt.
 Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger.eps>
 (epstopdf)                    date: 2025-10-23 12:27:14
@@ -840,12 +840,12 @@ Package epstopdf Info: Source file: <images/experiment/dynamic_obstacles/dynamic
 (epstopdf)                    date: 2025-10-23 12:31:21
 (epstopdf)                    size: 65441 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger.eps>
-(epstopdf)             \includegraphics on input line 1034.
+(epstopdf)             \includegraphics on input line 1035.
 Package epstopdf Info: Output file is already uptodate.
 <images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf, id=151, 629.35126pt x 633.36626pt>
 File: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf Graphic file (type pdf)
 <use images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf>
-Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf  used on input line 1034.
+Package pdftex.def Info: images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf  used on input line 1035.
 (pdftex.def)             Requested size: 80.58003pt x 81.0938pt.
  [6 </home/marcone/Dropbox/IFAC2026/images/experiment/poles_experiment_zoom-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/nominal/1st_scenario_exp_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/nominal/2nd_scenario_exp_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/nominal/3rd_scenario_exp_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/static_obstacles/1st_scenario_exp_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger-eps-converted-to.pdf> </home/marcone/Dropbox/IFAC2026/images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger-eps-converted-to.pdf>] (/home/marcone/Dropbox/IFAC2026/IFAC_main.bbl
 Underfull \hbox (badness 4699) in paragraph at lines 35--40
@@ -910,7 +910,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  48i,21n,50p,388b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /home/marcone/Dropbox/IFAC2026/IFAC_main.pdf (7 pages, 5657444 bytes).
+Output written on /home/marcone/Dropbox/IFAC2026/IFAC_main.pdf (7 pages, 5657361 bytes).
 PDF statistics:
  274 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams
