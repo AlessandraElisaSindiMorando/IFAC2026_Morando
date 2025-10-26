@@ -1059,8 +1059,35 @@ A video of the test is available at:\TODO{}.
 
 \section{Conclusion}
 \label{sec:conclusion}
-
-\dots
+This paper continues the work by~\cite{Morando2025SOSE}
+and addresses the formation of a heterogeneous fleet composed 
+of two unicycles and a quadcopter.
+The proposed solution combines feedback linearization,
+an LMI-based controller, and APFs.
+The robust formation achievement problem is defined as 
+a linear-quadratic dynamic game, where the optimal control 
+strategy is obtained by solving only one time offline a LMI.
+To avoid collisions among the ground robots and with any
+obstacles, a hierarchy is defined between the two-wheeled agents, 
+and APFs are employed.
+After some simulations, the proposed scheme has  been extremely validated 
+through experiments in an indoor arena.
+The test set included scenarios with static and dynamic obstacles.
+Results show that in all the cases, the team is able to reach 
+the formation without the crashes of the ground robots.
+Still there is room for improvement, which opens up to new perspectives.
+First, to reduce the position tracking error of the drone, one approach  
+is to introduce two additional dynamics: an integral 
+action on the $X$ and an integral action on the $Y$.
+In this way, an analogy can be drawn with a PID controller, similar to the one
+used with the PD controller.
+Finally, in this work it was assumed that the Z-controller 
+compensates the gravity, which results in $(X,Y)$-dynamics 
+independent of the drone's mass.
+For future work, it would be interesting to include 
+the quadrotor'altitude in the formation dynamics 
+to address changes in the mass, potentially 
+by modelling the overall system as a Linear Parameter-Varying one.
 
 \bibliography{bibliography}    % bib file to produce the bibliography
                            % with bibtex (preferred)
