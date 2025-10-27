@@ -69,7 +69,7 @@ the reader can refer to the work of~\cite{Maldonado2024}.
 One of the fundamental cooperative tasks when working with multi-agents is formation
 control.
 This topic has been studied for years.
-For example, already~\cite{LEE200985} already proposed
+For example, ~\cite{LEE200985} already proposed
 a decentralized control algorithm for a team of two-wheeled robots 
 to achieve achieve a geometric pattern.
 However, formation control remains an hot challenging topic to this day.
@@ -377,7 +377,7 @@ To model real-world disturbances, it is assumed
 that an addictive zero-mean disturbance $\boldsymbol{d}(k)$
 is acting on the input channel, i.e.
 \begin{equation}
-    \boldsymbol{e}(k+1) = A_d \boldsymbol{e}(k) + B_d \boldsymbol{u}(k) + B_d \boldsymbol{d}(k)
+    \boldsymbol{e}(k+1) = A_d \boldsymbol{e}(k) + B_d \left[\boldsymbol{u}(k) + \boldsymbol{d}(k)\right]
     \label{eq:airground-fleet-z}
 \end{equation}
 Let us make the following hypothesis: 
