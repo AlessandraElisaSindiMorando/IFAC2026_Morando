@@ -21,8 +21,7 @@
 \begin{document}
 \begin{frontmatter}
 
-\title{\textcolor{red}{Style for IFAC Conferences \& Symposia: Use Title Case for
-  Paper Title}} 
+\title{LMI-based Formation Control with Collision Avoidance for Air-Ground Fleet} 
 % Title, preferably not more than 10 words.
 
 \author[First,Second]{Alessandra Elisa Sindi Morando} 
@@ -41,13 +40,18 @@
 }
 
 \begin{abstract}                % Abstract of 50--100 words
-\textcolor{red}{\dots}
+This paper proposes a formation controller for a fleet composed of two unicycles and a quadcopter.
+The formation problem is defined as a min-max problem whose optimal control strategy is linear 
+in the local measurements of each agent, and the matrix gains are obtained by solving a Linear Matrix Inequality.
+Artificial repulsive forces are added to avoid inter-agent collisions and obstacles.
+The proposed control scheme was validated both in simulation and through several experiments, involving both static and dynamic obstacles.
+The results show that the agents can achieve the formation without crashes.
 \end{abstract}
-
 \begin{keyword}
    \textcolor{red}{\dots}
    %Five to ten keywords, preferably chosen from the IFAC keyword list.
 \end{keyword}
+% https://ifac.micehub-gov.com/fairContents.do?FAIRMENU_IDX=21837&hl=ENG#guide-keywords
 
 \end{frontmatter}
 %===============================================================================
