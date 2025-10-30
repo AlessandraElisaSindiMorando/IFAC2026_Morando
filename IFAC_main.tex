@@ -57,22 +57,22 @@ The results show that the agents can achieve the formation without crashes.
 %===============================================================================
 
 \section{Introduction}
-Multi-agent systems (MASs) are nowadays used in a variety of applications from as
-they can perform complex tasks, which would otherwise impossible for a single robot.
-This is even more the case when considering heterogeneous fleet where the strenghts
+Multi-agent systems (MASs) are nowadays used in a variety of applications as
+they can perform complex tasks, which would be otherwise impossible for a single robot.
+This is evident when considering an heterogeneous fleet where the strenghts
 of one type of robot can compensate for the limitations of another.
 For example, to monitor a large area, multiple ground agents can move from one point 
-to another being supervised from above by a drone with a wide field of view.
-To deepen the subject and understand both the potential tasks and challenges of MASs,
-the reader can refer to the work of~\cite{Maldonado2024}.
+to another while being supervised from above by a drone with a wide field of view.
+A deeper analysis of the subject to understand the potential tasks and challenges of MASs,
+the reader is refered to the work of~\cite{Maldonado2024}.
 
 One of the fundamental cooperative tasks when working with multi-agents is formation
 control.
 This topic has been studied for years.
 For example, ~\cite{LEE200985} already proposed
 a decentralized control algorithm for a team of two-wheeled robots 
-to achieve achieve a geometric pattern.
-However, formation control remains an hot challenging topic to this day.
+to achieve a geometric pattern.
+However, formation control remains an active research topic.
 \cite{TRAN2021100117} experimentally validated a robust distributed control 
 based on negative imaginary systems consensus theory, using both ground robots and
 an air-ground fleet.
@@ -85,17 +85,17 @@ has been presented and validated through simulations by~\cite{Huang2023}.
 as a discrete-time game whose solution is given by a state-dependent Riccati equation.
 A robust distributed consensus controller is presented by~\cite{Restrepo2023}
 to address the rendezvous problem and applied in simulation to a swarm of drones.
-In the recent years, reinforcement learning has used in many areas including 
+In the recent years, reinforcement learning has been used in many areas including 
 formation control. 
 \cite{WANG20208150} addressed multi-particle formation control by combining 
 graph attention networks and multiple long short-term memories to achieve the 
 desired shape and avoid collisions respectively.
 A position and an orientation robust controllers based on reinforcement learning 
 are proposed and validated through simulations by~\cite{Zhong2025} for the formation 
-of a term of quadrotors.
+of a team of quadrotors.
 
-In this context is placed this work which proposes a novel formation control scheme
-for a team consisting of a quadcopter and two unicycles, as show in Fig.~\ref{fig:summary_image}.
+This is the context of our work, which proposes a novel formation control scheme
+for a group consisting of a quadcopter and two unicycles, as shown in Fig.~\ref{fig:summary_image}.
 \begin{figure}
     \centering
     % trim = left bottom right top (in points or any unit)
@@ -110,15 +110,15 @@ achieving the desired shape and avoiding collisions.
 On one hand, for the first challenge, a distributed controller combining Feedback 
 Linearization (FL) and an optimal linear controller based on Linear Matrix 
 Inequalities (LMIs) is presented.
-LMIs are a powerful mathematical tool used in many applications among which also 
+LMIs are a powerful mathematical tool used in many applications, among which is also 
 formation control.
-In the work of~\cite{Trejo2023}, an LMI is solved to design the controller 
+In the work of~\cite{Trejo2023}, a LMI is solved to design the controller 
 and observer gains, guaranteeing stable formation flight for a group of quadcopters.
 ~\cite{Deshpande2011} propose a formation control with artificial 
 fixed delays for multiple double-integrators and 
 verify the asymptotic stability of the scheme by checking 
-the solvability of an LMI.
-~\cite{Semsar2009} present an LMI formulation of the LQR problem 
+the solvability of a LMI.
+~\cite{Semsar2009} present a LMI formulation of the LQR problem 
 to guarantee stable state consensus with an optimal control effort 
 in a multi-agent system.
 On the other end, to avoid collision avoidance, the chosen solution is 
@@ -156,7 +156,7 @@ while attaining the desired shape.
 
 This paper represents the continuation of the previous work by~\cite{Morando2025SOSE},
 where a control architecture combining Feedback Linerarization (FL), 
-a robust LMI-based controller and APFs was proposed 
+a robust LMI-based controller, and APFs was proposed 
 and validated through simulations for 
 the formation of three unicycles.
 The successive developments sought to manage the challenge
@@ -175,7 +175,7 @@ The proposed formation controller is detailed in Section~\ref{sec:formation_cont
 The simulations and the experiments results are reported and analyzed
 in Section~\ref{sec:simulation_results} and 
 in Section~\ref{sec:experimental_validation} respectively.
-Finally, conclusions are drawn in Section~\ref{sec:conclusion}.
+Finally, the conclusions are presented in Section~\ref{sec:conclusion}.
 
 \section{Heterogeneous Fleet Modeling}
 \label{sec:heterogeneous_fleet_modeling}
@@ -202,8 +202,8 @@ where $(x_i, y_i, \theta_i)$ is the pose of the agent
 and $(v_i, \omega_i)$ are the linear and
 angular velocities respectively.
 The equations~\eqref{eq:unicycle_i_t-model} describing the motion of the center of rotation are non-linear.
-But still, if a point located at distance $R > 0$ from 
-$(x_i, y_i)$ denote as $({x}_{R_i}, {y}_{R_i})$, is 
+Still, if a point located at distance $R > 0$ from 
+$(x_i, y_i)$, which will be denoted as $({x}_{R_i}, {y}_{R_i})$, is 
 considered and new virtual inputs are defined $(u_{i,x},u_{i,y})$, 
 the dynamics become linear:
 \begin{equation}
@@ -394,7 +394,7 @@ The two crucial issues, formation maintenance and collision avoidance,
 are addressed respectively in the next two subsections.
 
 
-\subsection{Formation Maintenance: an LMI Approach}
+\subsection{Formation Maintenance: a LMI Approach}
 The first goal is to ensure the robots achieve the desired shape 
 while using only local measurements 
 and counteracting the worst-case disturbance.
@@ -1069,7 +1069,7 @@ This paper continues the work by~\cite{Morando2025SOSE}
 and addresses the formation of a heterogeneous fleet composed 
 of two unicycles and a quadcopter.
 The proposed solution combines feedback linearization,
-an LMI-based controller, and APFs.
+a LMI-based controller, and APFs.
 The robust formation achievement problem is defined as 
 a linear-quadratic dynamic game, where the optimal control 
 strategy is obtained by solving only one time offline a LMI.
