@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex IFAC_main"] 1761916424 "IFAC_main.aux" "IFAC_main.bbl" "IFAC_main" 1761917022
+["bibtex IFAC_main"] 1761921918 "IFAC_main.aux" "IFAC_main.bbl" "IFAC_main" 1761921920
   "./ifacconf.bst" 1208194986 30606 0a94c3be66b01cc15224e14423d70f48 ""
-  "IFAC_main.aux" 1761917022 12243 ecc16d8c1dc48c9c685af333acfcf092 "pdflatex"
+  "IFAC_main.aux" 1761921920 12243 ec37701cbac7560bb4e42afafe354ed0 "pdflatex"
   "bibliography.bib" 1761907901 12655 ec1a8655493d63d15e9e6cf723e7ad33 ""
   (generated)
   "IFAC_main.blg"
   "IFAC_main.bbl"
-["pdflatex"] 1761917020 "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf" "IFAC_main" 1761917022
+["pdflatex"] 1761921918 "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf" "IFAC_main" 1761921920
   "/etc/texmf/web2c/texmf.cnf" 1724269302 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.aux" 1761917022 12243 ecc16d8c1dc48c9c685af333acfcf092 ""
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" 1761917020 50684 b3947ab4c80d5c42f3fbb308ce54e4e0 ""
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.aux" 1761921920 12243 ec37701cbac7560bb4e42afafe354ed0 ""
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" 1761921916 50796 574841219838f5695187415b3855c24f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -149,10 +149,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724308539 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1724308560 8257866 6fc293878c09fcfc6fb4d20cbfce0532 ""
-  "IFAC_main.aux" 1761917022 12243 ecc16d8c1dc48c9c685af333acfcf092 "pdflatex"
-  "IFAC_main.bbl" 1761916424 6747 d4d17443a00700ef60d42c988614ac41 "bibtex IFAC_main"
-  "IFAC_main.out" 1761917022 495 c6aef2eeec09a53071aa70c1f9c6c914 "pdflatex"
-  "IFAC_main.tex" 1761917020 50684 b3947ab4c80d5c42f3fbb308ce54e4e0 ""
+  "IFAC_main.aux" 1761921920 12243 ec37701cbac7560bb4e42afafe354ed0 "pdflatex"
+  "IFAC_main.bbl" 1761921918 6747 d4d17443a00700ef60d42c988614ac41 "bibtex IFAC_main"
+  "IFAC_main.out" 1761921920 495 c6aef2eeec09a53071aa70c1f9c6c914 "pdflatex"
+  "IFAC_main.tex" 1761921916 50796 574841219838f5695187415b3855c24f ""
   "ifacconf.cls" 1644575019 65574 8eace75e0305628a2c07c0f2a28ee3cd ""
   "images/dSafe.pdf" 1760893654 53195 96ec1a4e63327cf3c8122599572ce159 ""
   "images/drone_fromAbove2.png" 1760960163 185036 cc729e8cc01280551ed6f46dd53b919c ""
@@ -179,9 +179,9 @@
   "images/simulations/wo_APF/2nd_scenario_wo.eps" 1761059574 1413628 aa19d6a147362a241d13a2e1a5884fb4 ""
   "images/simulations/wo_APF/3rd_scenario_wo.eps" 1761059626 1355879 1077156688430bdb875f5b76d70559cd ""
   (generated)
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.log"
-  "IFAC_main.log"
   "IFAC_main.out"
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf"
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.log"
   "IFAC_main.aux"
   "IFAC_main.pdf"
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf"
+  "IFAC_main.log"
