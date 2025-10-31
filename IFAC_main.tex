@@ -653,15 +653,16 @@ if $d_{12} \leq 2 d_{Safe}$ (with $d_{Safe} = \SI{0.13}{\meter}$,
 see Fig.~\ref{fig:safety_distance}).
 \begin{figure}
     \centering
-    \vspace{-0.2cm}
+    \vspace{-0.4cm}
     \hspace{1cm}
-   \begin{subfigure}{0.3\columnwidth}
-        \includegraphics[height=3cm]{images/robot_dSafe.pdf}
+   \begin{subfigure}{0.4\columnwidth}
+        \includegraphics[width=\textwidth]{images/robot_dSafe.pdf}
     \end{subfigure}
     % \hspace{-0.6cm}
-    \begin{subfigure}{0.3\columnwidth}
-        \includegraphics[height=3cm]{images/dSafe.pdf}
+    \begin{subfigure}{0.35\columnwidth}
+        \includegraphics[width=\textwidth]{images/dSafe.pdf}
     \end{subfigure}
+    \vspace{-0.35cm}
     \caption{The physical robot is contained entirely 
     in a circle of radius $d_{Safe} = \SI{0.13}{\meter}$.
     Consequently, if the centers of rotation are 
@@ -697,33 +698,35 @@ Finally, stars denote the desired final positions of the robots
 based on the definitions of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12}$.
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.32\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/simulations/with_APF/not_noisy/1st_scenario_with_noNoise.eps}
-         \caption{Triangle Top}
-         \label{fig:sim_withAPF_noNoise_1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    % \begin{subfigure}[b]{0.32\columnwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{images/simulations/with_APF/not_noisy/1st_scenario_with_noNoise.eps}
+    %      \caption{Triangle Top}
+    %      \label{fig:sim_withAPF_noNoise_1}
+    % \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/with_APF/not_noisy/2nd_scenario_with_noNoise.eps}
         \caption{Line Segment}
          \label{fig:sim_withAPF_noNoise_2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/with_APF/not_noisy/3rd_scenario_with_noNoise.eps}
       \caption{Triangle Right}
          \label{fig:sim_withAPF_noNoise_3}
     \end{subfigure}
-    \vspace{-0.2cm}
+    \vspace{-0.5cm}
     \caption{Trajectories of the three agents with desired and actual interdistances in ideal simulations.}
     \label{fig:sim_withAPF_noNoise}
 \end{figure}
 From Fig.~\ref{fig:sim_withAPF_noNoise}, it is straightforward to conclude that the agents make the formation avoiding collisions in 
 all scenarios, which differ in initial conditions and desired geometric shapes.
-The key performance index for the first scenario is $\bar{t} = \SI{54.76}{\second}$,
-for the second case $\bar{t} = \SI{59.38}{\second}$, and for 
-the last case $\bar{t} = \SI{59.38}{\second}$.
+% The key performance index for the first scenario is $\bar{t} = \SI{54.76}{\second}$,
+% for the second case $\bar{t} = \SI{59.38}{\second}$, and for 
+% the last case $\bar{t} = \SI{59.38}{\second}$.
+The key performance index for the first scenario is $\bar{t} = \SI{59.38}{\second}$ and for 
+the second case $\bar{t} = \SI{59.38}{\second}$.
 
 To demonstrate the importance of APFs, the simulations have been redone without repulsive
 forces.
@@ -732,32 +735,32 @@ the end of the test.
 Fig.~\ref{fig:sim_woAPF_noNoise} displays the resulting trajectories.
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.32\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/simulations/wo_APF/1st_scenario_wo.eps}
-        \caption{Triangle Top}
-        \label{fig:sim_woAPF_noNoise_1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    % \begin{subfigure}[b]{0.32\columnwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{images/simulations/wo_APF/1st_scenario_wo.eps}
+    %     \caption{Triangle Top}
+    %     \label{fig:sim_woAPF_noNoise_1}
+    % \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/wo_APF/2nd_scenario_wo.eps}
         \caption{Line Segment}
          \label{fig:sim_woAPF_noNoise_2}
     \end{subfigure}
     % \hfill
-    \begin{subfigure}[b]{0.32\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/wo_APF/3rd_scenario_wo.eps}
         \caption{Triangle Right}
          \label{fig:sim_woAPF_noNoise_3}
     \end{subfigure}
-    \vspace{-0.2cm}
+    \vspace{-0.5cm}
     \caption{Trajectories of the three agents without APFs in ideal simulations.}
     \label{fig:sim_woAPF_noNoise}
 \end{figure}
-In the first case, the curves are the same as Fig.~\ref{fig:sim_withAPF_noNoise_1} since 
-the unicycles do not clash.
-However, the differences are obvious in the other two cases: compare
+% In the first case, the curves are the same as Fig.~\ref{fig:sim_withAPF_noNoise_1} since 
+% the unicycles do not clash.
+However, the differences are obvious: compare
 Fig.~\ref{fig:sim_woAPF_noNoise_2} and Fig.~\ref{fig:sim_woAPF_noNoise_3} with
 Fig.~\ref{fig:sim_withAPF_noNoise_2} and Fig.~\ref{fig:sim_withAPF_noNoise_3}.
 It is clear  that without APFs, the unicycles get too close and they must stop.
@@ -774,22 +777,22 @@ as a gaussian noise with variance $\Sigma = 0.1 I_{6\times6}$.
 The results are presented in Fig.~\ref{fig:sim_withAPF_noisy}.
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.32\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/simulations/with_APF/noisy/1st_scenario_with_noisy.eps}
-         \caption{Triangle Top}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    % \begin{subfigure}[b]{0.32\columnwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{images/simulations/with_APF/noisy/1st_scenario_with_noisy.eps}
+    %      \caption{Triangle Top}
+    % \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/with_APF/noisy/2nd_scenario_with_noisy.eps}
         \caption{Line Segment}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/simulations/with_APF/noisy/3rd_scenario_with_noisy.eps}
       \caption{Triangle Right}
     \end{subfigure}
-    \vspace{-0.2cm}
+    \vspace{-0.5cm}
     \caption{Trajectories of the three agents with desired and actual interdistances in simulation with disturbances.}
     \label{fig:sim_withAPF_noisy}
 \end{figure}
@@ -937,10 +940,11 @@ The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
 \end{figure}
 The geometric shape is achieved by the fleet but still 
 the quadrotor is not exactly in the desired position, denoted with the red star.
-The same behaviour has been observed in all the tests, showing that there 
-is still room for improvement.
-As it will be discussed in Section~\ref{sec:conclusion}, a possible solution is to also include 
-in the dynamics an integral action both in X and Y.
+The same behaviour has been observed in all the tests.
+% , showing that there 
+% is still room for improvement.
+% As it will be discussed in Section~\ref{sec:conclusion}, a possible solution is to also include 
+% in the dynamics an integral action both in X and Y.
 The robots $G_1$ and $G_2$, however, keep the desired distances from the drone and from G2, 
 respectively.
 For these reasons, the final geometry of the team (solid line)
@@ -995,8 +999,11 @@ and $\bar{t}_2 = \SI{15.94}{\second}$.
 Moreover, the robot $G_2$ does not go the shortest route towards 
 the green star, but instead approaches it from the right to avoid 
 collisions with $G_1$.
-To confirm this assumption, another experiment was conducted by swapping
-the ground robots at the start so they were already on the right side.
+% To confirm this assumption, another experiment was conducted by swapping
+% the ground robots at the start so they were already on the right side.
+To confirm this assumption, another experiment was conducted in which the ground 
+robots'starting positions were swapped, so that the robots began on the same side 
+as their respective desired final positions.
 Fig.~\ref{fig:exp_staticObstacles_left} shows the results.
 As expected, $G_2$ this time avoids the obstacles moving on 
 the left-hand side of the cones.
@@ -1011,19 +1018,19 @@ A video with the two experiments can be seen at:
 
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.31\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_bigger.eps}
         \caption{$R_2$ on the right}
         \label{fig:exp_staticObstacles_right}
     \end{subfigure}
-    \begin{subfigure}[b]{0.31\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger.eps}
         \caption{$R_2$ on the left}
         \label{fig:exp_staticObstacles_left}
     \end{subfigure}
-    \vspace{-0.2cm}
+    \vspace{-0.5cm}
     \caption{Trajectories of the three agents with desired and actual interdistances 
    in the experiments with static obstacles.}
     \label{fig:exp_staticObstacles}
@@ -1040,25 +1047,25 @@ not for the entire test, but for some specific, interesting intervals of time.
 Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.32\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps}
-         \caption{$\SI{0}{\second} \leq  t \leq \SI{11}{\second}$}
-        \label{fig:exp_dynamicObstacles_1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    % \begin{subfigure}[b]{0.32\columnwidth}
+    %     \centering
+    %     \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_far_bigger.eps}
+    %      \caption{$\SI{0}{\second} \leq  t \leq \SI{11}{\second}$}
+    %     \label{fig:exp_dynamicObstacles_1}
+    % \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps}
          \caption{$\SI{31}{\second} \leq  t \leq \SI{42}{\second}$}
          \label{fig:exp_dynamicObstacles_2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.32\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/dynamic_obstacles/dynamicObst_exp_closeR1_bigger.eps}
         \caption{$\SI{56}{\second} \leq  t \leq \SI{63}{\second}$}
         \label{fig:exp_dynamicObstacles_3}
     \end{subfigure}
-    \vspace{-0.2cm}
+    \vspace{-0.5cm}
     \caption{Trajectories of the three agents with desired and actual interdistances 
    in the experiments with a dynamic obstacle.}
     \label{fig:exp_dynamicObstacles}
@@ -1067,7 +1074,7 @@ Initially, the dynamic obstacle is far from the agents,
 allowing them to reach 
 the formation, as in the scenario free of obstacles 
 in Fig.~\ref{fig:exp_noObstacles_3}.
-Let's now see what happens when the jammer gets close to the Jetbots.
+Subsequently, however, the jammer moves closer to the Jetbots.
 When the four-wheeled robot gets close to $G_2$, this last moves away, 
 breaking the formation to keep a safe distance from the obstacle.
 Still when the jammer goes back to being far apart, 
