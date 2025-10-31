@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: IFAC_main.aux
 The style file: ifacconf.bst
 Database file #1: bibliography.bib
-You've used 17 entries,
+You've used 18 entries,
             2921 wiz_defined-function locations,
-            723 strings with 9210 characters,
-and the built_in function-call counts, 12852 in all, are:
-= -- 1051
-> -- 572
-< -- 4
-+ -- 212
-- -- 189
-* -- 961
-:= -- 1897
-add.period$ -- 69
-call.type$ -- 17
-change.case$ -- 165
-chr.to.int$ -- 17
-cite$ -- 17
-duplicate$ -- 935
-empty$ -- 960
-format.name$ -- 248
-if$ -- 2643
+            730 strings with 9367 characters,
+and the built_in function-call counts, 13246 in all, are:
+= -- 1088
+> -- 582
+< -- 5
++ -- 216
+- -- 192
+* -- 978
+:= -- 1966
+add.period$ -- 73
+call.type$ -- 18
+change.case$ -- 172
+chr.to.int$ -- 18
+cite$ -- 18
+duplicate$ -- 967
+empty$ -- 989
+format.name$ -- 252
+if$ -- 2720
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 192
-newline$ -- 112
-num.names$ -- 68
-pop$ -- 390
+missing$ -- 198
+newline$ -- 118
+num.names$ -- 72
+pop$ -- 402
 preamble$ -- 1
-purify$ -- 131
+purify$ -- 136
 quote$ -- 0
-skip$ -- 345
+skip$ -- 358
 stack$ -- 0
-substring$ -- 628
-swap$ -- 532
+substring$ -- 641
+swap$ -- 544
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 153
+type$ -- 162
 warning$ -- 0
-while$ -- 76
+while$ -- 79
 width$ -- 0
-write$ -- 265
+write$ -- 279

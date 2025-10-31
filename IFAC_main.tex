@@ -7,12 +7,21 @@
 %===============================================================================
 \documentclass{ifacconf}
 
+\makeatletter
+\let\old@ssect\@ssect % Store how ifacconf defines \@ssect
+\makeatother
+
 \usepackage{graphicx}      % include this line if your document contains figures
 \usepackage{natbib}        % required for bibliography
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{siunitx}
 \usepackage{amsmath,amssymb,amsfonts} 
+\usepackage{hyperref} % Load hyperref here
+
+\makeatletter
+\let\@ssect\old@ssect % 3. Restore the IFAC's original command
+\makeatother
 
 \newcommand{\TODO}[1]{
 \textcolor{red}{\textbf{TODO} #1}
@@ -48,7 +57,7 @@ The proposed control scheme was validated both in simulation and through several
 The results show that the agents can achieve the formation without crashes.
 \end{abstract}
 \begin{keyword}
-   \textcolor{red}{\dots}
+    Cooperative Nonlinear Control, Robust Linear Matrix Inequalities, \textcolor{red}{\dots}
    %Five to ten keywords, preferably chosen from the IFAC keyword list.
 \end{keyword}
 % https://ifac.micehub-gov.com/fairContents.do?FAIRMENU_IDX=21837&hl=ENG#guide-keywords
@@ -100,8 +109,8 @@ for a group consisting of a quadcopter and two unicycles, as shown in Fig.~\ref{
     \centering
     % trim = left bottom right top (in points or any unit)
     % clip = true ensures the parts outside the box are hidden
-    \includegraphics[width=0.9\columnwidth, trim=10 50 15 110, clip]{images/output.pdf}
-    \caption{This paper proposes a formation control for a heterogeneous fleet to attain a desired shape despite obstacles.}
+    \includegraphics[width=\columnwidth, trim={0 50 0 50}, clip]{images/imageIntro2.png}
+    \caption{Heterogeneous multi-agent setup for the experimental validation of the proposed formation control, including collision and obstacle avoidance.}
     \label{fig:summary_image}
     \vspace{-0.1cm}
 \end{figure}
@@ -212,8 +221,9 @@ the dynamics become linear:
         \dot{y}_{R_i} = u_{i,y} \\
     \end{cases}
 \end{equation}
-Moving on to the drone, as in the formation problem deals with the $(X,Y)$-dynamics, some simplifying hypothesis have been made.
-First, let us assume that there is an inner attitude controller.
+Moving on to the drone, since the formation problem is restricted to the $(X,Y)$-plane, 
+some simplifying hypothesis have been made.
+First, let us assume that there is an inner attitude controller ensuring attitude stability.
 Hence, the focus is only on the translational dynamics which are:
 \begin{equation}
     \begin{cases}
@@ -612,22 +622,21 @@ eigenvalues of the closed-loop system
         0.9988 \quad  &   \mu = 2
     \end{cases}
 \end{equation}
-which are all inside the unitary circle,
-check Fig.~\ref{fig:poles-simulation}.
-\begin{figure}
-    \centering
-    \hspace{-1.5cm}
-    \begin{subfigure}[b]{0.3\columnwidth}
-        \includegraphics[height=3cm]{images/simulations/poles_simulations.eps}
-    \end{subfigure}
-    \hspace{0.3cm}
-    \begin{subfigure}[b]{0.3\columnwidth}
-        \includegraphics[height=3.2cm]{images/simulations/poles_simulations_zoom.eps}
-    \end{subfigure}
-    \vspace{-0.3cm}
-    \caption{Poles of the closed-loop system in the imaginary plane.}
-    \label{fig:poles-simulation}
-\end{figure}
+which are all inside the unitary circle.
+% \begin{figure}
+%     \centering
+%     \hspace{-1.5cm}
+%     \begin{subfigure}[b]{0.3\columnwidth}
+%         \includegraphics[height=3cm]{images/simulations/poles_simulations.eps}
+%     \end{subfigure}
+%     \hspace{0.3cm}
+%     \begin{subfigure}[b]{0.3\columnwidth}
+%         \includegraphics[height=3.2cm]{images/simulations/poles_simulations_zoom.eps}
+%     \end{subfigure}
+%     \vspace{-0.3cm}
+%     \caption{Poles of the closed-loop system in the imaginary plane.}
+%     \label{fig:poles-simulation}
+% \end{figure}
 % \textcolor{red}{change label for axes to X,Y. How to deal with 
 % the legend?Use a star in all the plots for the desired position.}
 Moving to the APFs, the mass of the Jetbot's robot is 
@@ -667,22 +676,22 @@ Let us define the key performance index $\bar{t}$ as follows:
         \left\lvert e_{\Delta_{12,x}}(t) \right\rvert < \varepsilon &, \left\lvert e_{\Delta_{12,y}}(t) \right\rvert < \varepsilon \\
     \end{aligned} \right.
 \end{equation}
-with $\varepsilon$ a negligible error. For the simulations, it has been set 
+with $\varepsilon$ being a negligible error. For the simulations, it has been set to
 $\varepsilon = \SI{0.10}{\meter}$.
 
 The first set of simulations considers a scenario with the ground clean 
 and without disturbances, i.e. $\boldsymbol{d}(k) = 0$.
 The results are shown in Fig.~\ref{fig:sim_withAPF_noNoise}.
-For each unicycle, they are plotted the 2D-trajectories 
-of the center of rotation and of the point $(x_{R_i}, y_{R_i})$ 
-with a solid and a dotted line respectively.
+For each unicycle, the 2D-trajectories of the center of rotation 
+are plotted along with the point $(x_{R_i}, y_{R_i})$ 
+with a solid and a dotted line, respectively.
 The desired inter distances drone-$G_1$ and $G_1$-$G_2$ are plotted 
 in dotted black, 
 while the actual inter distances at the end of the simulation 
-are the solid black lines.
+are shown as solid black lines.
 Finally, stars denote the desired final positions of the robots 
 based on the definitions of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12}$.
-\begin{figure}[b]
+\begin{figure}
     \centering
     \begin{subfigure}[b]{0.32\columnwidth}
         \centering
@@ -750,7 +759,7 @@ Fig.~\ref{fig:sim_withAPF_noNoise_2} and Fig.~\ref{fig:sim_withAPF_noNoise_3}.
 It is clear  that without APFs, the unicycles get too close and they must stop.
 Hence, even if the drone reaches the desired position $(x^d_A, y^d_A)$, 
 the overall formation is not attained by the fleet.
-On the opposite, thanks to the artificial repulsive forces the robot $G_2$ 
+On the contrary, thanks to the artificial repulsive forces the robot $G_2$ 
 deviates its path to stay at a safe distance from $G_1$.
 
 
@@ -796,7 +805,7 @@ $\bar{t} = \SI{112.1}{\second}$ respectively.
 \section{Experimental Validation}
 \label{sec:experimental_validation}
 Once analyzed the simulations and given the promising results, 
-the next step has been to validate the formation control scheme 
+the next step was to validate the formation control scheme 
 through experiments.
 The tests have been carried out in an indoor arena equipped with
 a motion capture Optitrack system, used to measure the robots' positions.
@@ -804,13 +813,13 @@ For the communication between multi-agents, the TCP protocol and ROS1 Noetic
 facilities have been used.
 The control actions were computed into separate ROS nodes running on 
 a ground station (i.e., the same laptop used for the simulations) 
-sending then the commands to the separate robots.
+then sending the commands to the separate robots.
 For controlling the quadcopter, the implementation of the inner controller 
-has been done using the FL-AIR framework.
+has been done using the FL-AIR framework developed by~\cite{SanahujaFlair}.
 
 Initially, some preliminary tests were run using the gains used in the simulations,
 but the drone presented unwanted oscillations.
-Making an analogy with a PD controller, we would like indeed the gain $K^\star_A$
+Making an analogy with a PD controller, we would indeed like the gain $K^\star_A$
 to have the following shape:
 \begin{equation}
     \begin{bmatrix}
@@ -820,7 +829,7 @@ to have the following shape:
     \label{eq:desired_shape_KA*}
 \end{equation}
 Which is equivalent to two PD controllers, one for 
-the $X$-dynamic and one for the $Y$-dynamic.
+the $X$-dynamics and one for the $Y$-dynamics.
 Moreover, when tuning experimentally a PD attitude controller 
 for the quadcopter, good  performance were obtained 
 with $K_D \approx 1.222 K_P = \alpha K_P$.
@@ -884,16 +893,16 @@ while the eigenvalues in closed-loop are:
         0.9849 -  0.0163\boldsymbol{i} \  &   \mu = 2
     \end{cases}
 \end{equation}
-which are again inside the unitary circle, 
-as shown in Fig~\ref{fig:poles-simulation-v2}.
-\begin{figure}
-    \centering
-    \includegraphics[height=3cm]{images/experiment/poles_experiment_zoom.eps}
-    \vspace{-0.3cm}
-    \caption{Poles of the closed-loop system in the imaginary plane with the new 
-    drone's measurement definition.}
-    \label{fig:poles-simulation-v2}
-\end{figure}
+which are again inside the unitary circle.
+% , as shown in Fig~\ref{fig:poles-simulation-v2}.
+% \begin{figure}
+%     \centering
+%     \includegraphics[height=3cm]{images/experiment/poles_experiment_zoom.eps}
+%     \vspace{-0.3cm}
+%     \caption{Poles of the closed-loop system in the imaginary plane with the new 
+%     drone's measurement definition.}
+%     \label{fig:poles-simulation-v2}
+% \end{figure}
 
 The first experiments have been conducted with the ground free of obstacles.
 The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
@@ -942,7 +951,8 @@ With this new definition, the formation is achieved after
 $\bar{t} = \SI{8.92}{\second}$,
 $\bar{t} = \SI{10.04}{\second}$,
 $\bar{t} = \SI{10.34}{\second}$ in the three scenarios respectively.
-A video collecting the three experiments can be found at:\TODO{}.
+A video collecting the three experiments can be found at:
+\textcolor{blue}{\href{https://youtu.be/wefGtmPAPiA}{https://youtu.be/wefGtmPAPiA}}.
 At the end, even the ground vehicles appear to oscilllate. 
 This can be explained by the small oscillations of the drone around the desired position, 
 which are then mirrored by the unicycles as they mantain the geometric shape.
@@ -991,7 +1001,9 @@ the right-hand side of the cones.
 This is reflected in the key performance indexes:
 $\bar{t} = \SI{9.66}{\second}$,
 $\bar{t}_1 = \SI{8.20}{\second}$, and $\bar{t}_2 = \SI{9.66}{\second}$.
-A video with the two experiments can be seen at:\TODO{}.
+A video with the two experiments can be seen at:
+\textcolor{blue}{\href{https://youtu.be/_DwPV7lcr4U}
+{https://youtu.be/\_DwPV7lcr4U}}.
 
 \begin{figure}
     \centering
@@ -1019,7 +1031,7 @@ While the other agents form the desired shape, the robot, guided using
 a joystick by an operator tries to disrupt the team.
 The geometric shape and the initial positions of 
 the agents are the ones in Fig.\ref{fig:exp_noObstacles_3}.
-To better show and analyze the results, the robots'trajectories are plotted 
+To better show and analyze the results, the robots' trajectories are plotted 
 not for the entire test, but for some specific, interesting intervals of time.
 Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
 \begin{figure}
@@ -1061,7 +1073,8 @@ robots start moving but for two different reasons.
 On the one hand, $G_1$ moves to be at a safe distance from the obstacle.
 On the other hand, $G_2$ moves not because it is too close to the obstacle, 
 but to keep the desired distance from $G_1$.
-A video of the test is available at:\TODO{}.
+A video of the test is available at:
+\textcolor{blue}{\href{https://youtu.be/vXEV-TBfdAY}{https://youtu.be/vXEV-TBfdAY}}.
 
 \section{Conclusion}
 \label{sec:conclusion}

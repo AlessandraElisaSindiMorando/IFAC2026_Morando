@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -90,6 +90,12 @@ Restrepo, E., Loría, A., Sarras, I., and Marzat, J. (2023).
   Application to rendezvous of underactuated uavs.
 \newblock \emph{IEEE Transactions on Automatic Control}, 68(1), 329--342.
 \newblock \doi{10.1109/TAC.2022.3144107}.
+
+\bibitem[{Sanahuja(2022)}]{SanahujaFlair}
+Sanahuja, G. (2022).
+\newblock {Fl-AIR (Framework Libre Air)}.
+\newblock \url{https://gitlab.utc.fr/uav-hds/flair/flair-src}.
+\newblock [Online; accessed 31-October-2025].
 
 \bibitem[{Semsar-Kazerooni and Khorasani(2009)}]{Semsar2009}
 Semsar-Kazerooni, E. and Khorasani, K. (2009).
