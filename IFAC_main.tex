@@ -945,8 +945,40 @@ The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
 \end{figure}
 In the figure, one experiment (the one corresponding to the line segment shape) has been omitted 
 due to limited space.
-The geometric shape is achieved by the fleet but still 
+The geometric shape is achieved by the fleet.
+For the quantitative analysis, the negligible error 
+has been increased to $\varepsilon = \SI{0.20}{\meter}$.
+With this new definition, the formation is achieved after
+$\bar{t} = \SI{8.92}{\second}$ and
+% $\bar{t} = \SI{10.04}{\second}$,
+$\bar{t} = \SI{10.34}{\second}$ in the two scenarios respectively.
+Still 
 the quadrotor is not exactly in the desired position, denoted with the red star.
+% Indeed, let us analyze the formation errors shown in 
+% Fig.~\ref{fig:exp_noObstacles_formationErrors}.
+INdeed, let us analyze Fig.~\ref{fig:exp_noObstacles_formationErrors}, which shows
+the formation errors for the first experiment plotted in~\ref{fig:exp_noObstacles_1} 
+(only this one, for the sake of brevity).
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/nominal/error_x.eps}
+        \caption{Triangle Top}
+        \label{fig:exp_noObstacles_error_x}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/experiment/nominal/error_y.eps}
+        \caption{Triangle Right}
+        \label{fig:exp_noObstacles_error_y}
+      \end{subfigure}
+   \vspace{-0.2cm}
+   \caption{.}
+   \label{fig:exp_noObstacles_formationErrors}
+\end{figure}
+The ground robots'errors, shown in blue and green, converge to zero, while the drone maintains
+a non-zero error that is still smaller than $\varepsilon$.
 The same behaviour has been observed in all the tests.
 % , showing that there 
 % is still room for improvement.
@@ -960,12 +992,6 @@ mantains the correct shape and orientation but translated from the desired confi
 (dotted black line).
 Moreover, even if the desired final positions are inverted w.r.t the initial 
 positions of the ground vehicles, they do not collide.
-For the quantitative analysis, the negligible error 
-has been increased to $\varepsilon = \SI{0.20}{\meter}$.
-With this new definition, the formation is achieved after
-$\bar{t} = \SI{8.92}{\second}$ and
-% $\bar{t} = \SI{10.04}{\second}$,
-$\bar{t} = \SI{10.34}{\second}$ in the two scenarios respectively.
 A video collecting the experiments can be found at:
 \textcolor{blue}{\href{https://youtu.be/wefGtmPAPiA}{https://youtu.be/wefGtmPAPiA}}.
 This time, the test with the line segment was also included. 

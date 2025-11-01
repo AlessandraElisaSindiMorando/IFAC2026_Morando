@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex IFAC_main"] 1761988800 "IFAC_main.aux" "IFAC_main.bbl" "IFAC_main" 1761988956
+["bibtex IFAC_main"] 1762009101 "IFAC_main.aux" "IFAC_main.bbl" "IFAC_main" 1762009573
   "./ifacconf.bst" 1208194986 30606 0a94c3be66b01cc15224e14423d70f48 ""
-  "IFAC_main.aux" 1761988906 11466 ff97b637e4f0638fd9b97f388dd7103f "pdflatex"
+  "IFAC_main.aux" 1762009573 12054 44759e62035153f298e919d52ed80631 "pdflatex"
   "bibliography.bib" 1761907901 12655 ec1a8655493d63d15e9e6cf723e7ad33 ""
   (generated)
   "IFAC_main.blg"
   "IFAC_main.bbl"
-["pdflatex"] 1761988905 "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf" "IFAC_main" 1761988956
+["pdflatex"] 1762009572 "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf" "IFAC_main" 1762009573
   "/etc/texmf/web2c/texmf.cnf" 1724269302 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.aux" 1761988906 11466 ff97b637e4f0638fd9b97f388dd7103f ""
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" 1761988956 51620 e62dfff92ea49f98e9dcf08a5ce01b6f ""
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.aux" 1762009573 12054 44759e62035153f298e919d52ed80631 ""
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.tex" 1762009572 52694 a43e612a42f481c09d7a94c2a424ae09 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -149,10 +149,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724308539 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1724308560 8257866 6fc293878c09fcfc6fb4d20cbfce0532 ""
-  "IFAC_main.aux" 1761988906 11466 ff97b637e4f0638fd9b97f388dd7103f "pdflatex"
-  "IFAC_main.bbl" 1761988800 6747 d4d17443a00700ef60d42c988614ac41 "bibtex IFAC_main"
-  "IFAC_main.out" 1761988906 495 c6aef2eeec09a53071aa70c1f9c6c914 "pdflatex"
-  "IFAC_main.tex" 1761988956 51620 e62dfff92ea49f98e9dcf08a5ce01b6f ""
+  "IFAC_main.aux" 1762009573 12054 44759e62035153f298e919d52ed80631 "pdflatex"
+  "IFAC_main.bbl" 1762009101 6747 d4d17443a00700ef60d42c988614ac41 "bibtex IFAC_main"
+  "IFAC_main.out" 1762009573 495 c6aef2eeec09a53071aa70c1f9c6c914 "pdflatex"
+  "IFAC_main.tex" 1762009572 52694 a43e612a42f481c09d7a94c2a424ae09 ""
   "ifacconf.cls" 1644575019 65574 8eace75e0305628a2c07c0f2a28ee3cd ""
   "images/collisions3.png" 1761988886 721591 2917122053d385eefbdfa4ed06ea0da4 ""
   "images/drone_fromAbove2.png" 1760960163 185036 cc729e8cc01280551ed6f46dd53b919c ""
@@ -162,6 +162,8 @@
   "images/experiment/dynamic_obstacles/dynamicObst_exp_closeR2_bigger.eps" 1761215310 139636 a1bdfcd1ed1fb54a027e08dc9720c79e ""
   "images/experiment/nominal/1st_scenario_exp_bigger.eps" 1761131979 272442 9788e955d21af7f20954e646bbf2fc91 ""
   "images/experiment/nominal/3rd_scenario_exp_bigger.eps" 1761215525 222310 8a0bb0560d86d84b05d37742a5f959a7 ""
+  "images/experiment/nominal/error_x.eps" 1762007085 166354 5993cdbc6bee938874b344ca79044fae ""
+  "images/experiment/nominal/error_y.eps" 1762007086 165012 4b290f215cc4018f35a4654229635a79 ""
   "images/experiment/static_obstacles/1st_scenario_exp_bigger.eps" 1761208818 389567 73f874023c01008e18222724cbab7dba ""
   "images/experiment/static_obstacles/1st_scenario_exp_obs_swap_bigger.eps" 1761211230 202643 66a80ff5ea2acc50e9db136955764a56 ""
   "images/heterogenous_fleet_PNG300_2.png" 1760954418 605518 78adb222c8f9c743143ce5bf3e025d44 ""
@@ -174,8 +176,8 @@
   "images/simulations/wo_APF/3rd_scenario_wo.eps" 1761059626 1355879 1077156688430bdb875f5b76d70559cd ""
   (generated)
   "IFAC_main.aux"
-  "IFAC_main.out"
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.log"
   "IFAC_main.log"
-  "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf"
   "IFAC_main.pdf"
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.log"
+  "/home/marcone/Dropbox/IFAC2026/IFAC_main.pdf"
+  "IFAC_main.out"
