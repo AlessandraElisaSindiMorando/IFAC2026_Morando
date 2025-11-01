@@ -113,7 +113,8 @@ for a group consisting of a quadcopter and two unicycles, as shown in Fig.~\ref{
     \centering
     % trim = left bottom right top (in points or any unit)
     % clip = true ensures the parts outside the box are hidden
-    \includegraphics[width=\columnwidth, trim={0 50 0 50}, clip]{images/imageIntro2.png}
+    % \includegraphics[width=\columnwidth, trim={0 50 0 50}, clip]{images/imageIntro2.png}
+    \includegraphics[width=\columnwidth, trim={0 75 0 75}, clip]{images/imageIntro5.png}
     \caption{Heterogeneous multi-agent setup for the experimental validation of the proposed formation control, including collision and obstacle avoidance.}
     \label{fig:summary_image}
     \vspace{-0.1cm}
@@ -653,16 +654,17 @@ if $d_{12} \leq 2 d_{Safe}$ (with $d_{Safe} = \SI{0.13}{\meter}$,
 see Fig.~\ref{fig:safety_distance}).
 \begin{figure}
     \centering
-    \vspace{-0.4cm}
+%     \vspace{-0.4cm}
     \hspace{1cm}
-   \begin{subfigure}{0.4\columnwidth}
-        \includegraphics[width=\textwidth]{images/robot_dSafe.pdf}
-    \end{subfigure}
-    % \hspace{-0.6cm}
-    \begin{subfigure}{0.35\columnwidth}
-        \includegraphics[width=\textwidth]{images/dSafe.pdf}
-    \end{subfigure}
-    \vspace{-0.35cm}
+%    \begin{subfigure}{0.4\columnwidth}
+%         \includegraphics[width=\textwidth]{images/robot_dSafe.pdf}
+%     \end{subfigure}
+%     % \hspace{-0.6cm}
+%     \begin{subfigure}{0.35\columnwidth}
+%         \includegraphics[width=\textwidth]{images/dSafe.pdf}
+%     \end{subfigure}
+    % \vspace{-0.35cm}
+    \includegraphics[width=0.75\columnwidth]{images/collisions3.png}
     \caption{The physical robot is contained entirely 
     in a circle of radius $d_{Safe} = \SI{0.13}{\meter}$.
     Consequently, if the centers of rotation are 
@@ -719,6 +721,7 @@ based on the definitions of $(x^d_A, y^d_A)$, $ \Delta^d_{A1}$ and $\Delta^d_{12
     \vspace{-0.5cm}
     \caption{Trajectories of the three agents with desired and actual interdistances in ideal simulations.}
     \label{fig:sim_withAPF_noNoise}
+    % \vspace{-0.1cm}
 \end{figure}
 From Fig.~\ref{fig:sim_withAPF_noNoise}, it is straightforward to conclude that the agents make the formation avoiding collisions in 
 all scenarios, which differ in initial conditions and desired geometric shapes.
@@ -757,13 +760,14 @@ Fig.~\ref{fig:sim_woAPF_noNoise} displays the resulting trajectories.
     \vspace{-0.5cm}
     \caption{Trajectories of the three agents without APFs in ideal simulations.}
     \label{fig:sim_woAPF_noNoise}
+    % \vspace{-0.1cm}
 \end{figure}
 % In the first case, the curves are the same as Fig.~\ref{fig:sim_withAPF_noNoise_1} since 
 % the unicycles do not clash.
-However, the differences are obvious: compare
+Let us compare
 Fig.~\ref{fig:sim_woAPF_noNoise_2} and Fig.~\ref{fig:sim_woAPF_noNoise_3} with
-Fig.~\ref{fig:sim_withAPF_noNoise_2} and Fig.~\ref{fig:sim_withAPF_noNoise_3}.
-It is clear  that without APFs, the unicycles get too close and they must stop.
+Fig.~\ref{fig:sim_withAPF_noNoise_2} and Fig.~\ref{fig:sim_withAPF_noNoise_3}, respectively.
+Without APFs, the unicycles get too close and they must stop.
 Hence, even if the drone reaches the desired position $(x^d_A, y^d_A)$, 
 the overall formation is not attained by the fleet.
 On the contrary, thanks to the artificial repulsive forces the robot $G_2$ 
@@ -802,7 +806,8 @@ but the agents in the end oscillate around the desired final positions due to di
 This is the reason why the solid and dotted lines do not exactly overlap:
 the solid shape appears indeed to be a translated version of the dotted one.
 However, collisons between $G_1$ and $G_2$ are avoided and the formation is reached after
-$\bar{t} = \SI{54.22}{\second}$, $\bar{t} = \SI{112.14}{\second}$, and 
+% $\bar{t} = \SI{54.22}{\second}$, 
+$\bar{t} = \SI{112.14}{\second}$ and 
 $\bar{t} = \SI{112.1}{\second}$ respectively.
 
 
@@ -915,19 +920,19 @@ The first experiments have been conducted with the ground free of obstacles.
 The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.31\columnwidth}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/nominal/1st_scenario_exp_bigger.eps}
         \caption{Triangle Top}
         \label{fig:exp_noObstacles_1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.31\columnwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp_bigger.eps}
-      \caption{Line Segment}
-      \label{fig:exp_noObstacles_2}
-   \end{subfigure}
-    \begin{subfigure}[b]{0.31\columnwidth}
+%     \begin{subfigure}[b]{0.31\columnwidth}
+%         \centering
+%         \includegraphics[width=\linewidth]{images/experiment/nominal/2nd_scenario_exp_bigger.eps}
+%       \caption{Line Segment}
+%       \label{fig:exp_noObstacles_2}
+%    \end{subfigure}
+    \begin{subfigure}[b]{0.49\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{images/experiment/nominal/3rd_scenario_exp_bigger.eps}
         \caption{Triangle Right}
@@ -938,6 +943,8 @@ The resulting trajectories are shown in Fig.~\ref{fig:exp_noObstacles}.
    in the experiments with the ground clear of obstacles.}
    \label{fig:exp_noObstacles}
 \end{figure}
+In the figure, one experiment (the one corresponding to the line segment shape) has been omitted 
+due to limited space.
 The geometric shape is achieved by the fleet but still 
 the quadrotor is not exactly in the desired position, denoted with the red star.
 The same behaviour has been observed in all the tests.
@@ -956,11 +963,13 @@ positions of the ground vehicles, they do not collide.
 For the quantitative analysis, the negligible error 
 has been increased to $\varepsilon = \SI{0.20}{\meter}$.
 With this new definition, the formation is achieved after
-$\bar{t} = \SI{8.92}{\second}$,
-$\bar{t} = \SI{10.04}{\second}$,
-$\bar{t} = \SI{10.34}{\second}$ in the three scenarios respectively.
-A video collecting the three experiments can be found at:
+$\bar{t} = \SI{8.92}{\second}$ and
+% $\bar{t} = \SI{10.04}{\second}$,
+$\bar{t} = \SI{10.34}{\second}$ in the two scenarios respectively.
+A video collecting the experiments can be found at:
 \textcolor{blue}{\href{https://youtu.be/wefGtmPAPiA}{https://youtu.be/wefGtmPAPiA}}.
+This time, the test with the line segment was also included. 
+In this scenario, the geometric shape is achieved at $\bar{t} = \SI{10.04}{\second}$.
 At the end, even the ground vehicles appear to oscilllate. 
 This can be explained by the small oscillations of the drone around the desired position, 
 which are then mirrored by the unicycles as they mantain the geometric shape.
@@ -1005,10 +1014,8 @@ To confirm this assumption, another experiment was conducted in which the ground
 robots'starting positions were swapped, so that the robots began on the same side 
 as their respective desired final positions.
 Fig.~\ref{fig:exp_staticObstacles_left} shows the results.
-As expected, $G_2$ this time avoids the obstacles moving on 
+The vehicle $G_2$ this time avoids the obstacles moving on 
 the left-hand side of the cones.
-As expected, $G_2$ this time avoids the obstacles by moving on 
-the right-hand side of the cones. 
 This is reflected in the key performance indexes:
 $\bar{t} = \SI{9.66}{\second}$,
 $\bar{t}_1 = \SI{8.20}{\second}$, and $\bar{t}_2 = \SI{9.66}{\second}$.
@@ -1044,7 +1051,7 @@ The geometric shape and the initial positions of
 the agents are the ones in Fig.\ref{fig:exp_noObstacles_3}.
 To better show and analyze the results, the robots' trajectories are plotted 
 not for the entire test, but for some specific, interesting intervals of time.
-Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
+% Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
 \begin{figure}
     \centering
     % \begin{subfigure}[b]{0.32\columnwidth}
@@ -1070,12 +1077,12 @@ Let start by Fig.~\ref{fig:exp_dynamicObstacles_1}.
    in the experiments with a dynamic obstacle.}
     \label{fig:exp_dynamicObstacles}
 \end{figure}
-Initially, the dynamic obstacle is far from the agents,
+At the beginning of the experiment, the dynamic obstacle is far from the agents,
 allowing them to reach 
 the formation, as in the scenario free of obstacles 
 in Fig.~\ref{fig:exp_noObstacles_3}.
 Subsequently, however, the jammer moves closer to the Jetbots.
-When the four-wheeled robot gets close to $G_2$, this last moves away, 
+When the remote-controlled robot gets close to $G_2$, this last moves away, 
 breaking the formation to keep a safe distance from the obstacle.
 Still when the jammer goes back to being far apart, 
 $G_2$ will position itself at the desired distance from $G_1$.
