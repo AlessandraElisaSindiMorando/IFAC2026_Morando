@@ -72,12 +72,12 @@ The results show that the agents can achieve the formation without crashes.
 \section{Introduction}
 Multi-agent systems (MASs) are nowadays used in a variety of applications as
 they can perform complex tasks, which would be otherwise impossible for a single robot.
-This is evident when considering an heterogeneous fleet where the strenghts
+This is evident when considering an heterogeneous fleet where the strengths
 of one type of robot can compensate for the limitations of another.
 For example, to monitor a large area, multiple ground agents can move from one point 
 to another while being supervised from above by a drone with a wide field of view.
 A deeper analysis of the subject to understand the potential tasks and challenges of MASs,
-the reader is refered to the work of~\cite{Maldonado2024}.
+the reader is referred to the work of~\cite{Maldonado2024}.
 
 One of the fundamental cooperative tasks when working with multi-agents is formation
 control.
@@ -169,7 +169,7 @@ while attaining the desired shape.
 % }
 
 This paper represents the continuation of the previous work by~\cite{Morando2025SOSE},
-where a control architecture combining Feedback Linerarization (FL), 
+where a control architecture combining Feedback Linearization (FL), 
 a robust LMI-based controller, and APFs was proposed 
 and validated through simulations for 
 the formation of three unicycles.
@@ -180,7 +180,7 @@ the new solution.
 The contributions of this work are: a) a controller involving FL, a LMI-based controller and APFs 
 is presented for the stable formation of an air-ground fleet;
 b) the proposed controller has been validated through MATLAB Simulink
-simulations and a comprensive set of experiments in an indoor arena, including both static
+simulations and a comprehensive set of experiments in an indoor arena, including both static
 and dynamic obstacle scenarios.
 The remainder paper is structured as follows. 
 In Section~\ref{sec:heterogeneous_fleet_modeling}, 
@@ -237,7 +237,7 @@ Hence, the focus is only on the translational dynamics which are:
         m\ddot{z}^F_A = T \cos \theta \cos \phi  - m\, g\\
     \end{cases}
 \end{equation}
-Let analyze the equations with the help of Fig.~\ref{fig:drone_roll_pitch_frames}.
+Let us analyze the equations with the help of Fig.~\ref{fig:drone_roll_pitch_frames}.
 The state $({x}^F_A,{y}^F_A,{z}^F_A)$ represents the position of the drone w.r.t. the inertial frame $\{F\}$.
 The frame $\{F\}$ has been used instead of $\{I\}$ to be aligned with the framework employed 
 to implement the controller for the drone, see Section~\ref{sec:experimental_validation}.
@@ -245,7 +245,7 @@ The angles $\phi$ and $\theta$ are the roll and pitch Euler angles
 of the body frame $\{B\}$ (fixed to the drone) relative to the inertial
 frame $\{F\}$.
 Ignoring the small body forces, the only forces acting on the drone are 
-the trust produced by the motors $T$ along the $k^B$ direction and 
+the thrust produced by the motors $T$ along the $k^B$ direction and 
 the gravity $mg$ along the $-k^F$ direction.
 \begin{figure}
     \centering
@@ -279,7 +279,7 @@ the gravity $mg$ along the $-k^F$ direction.
     \caption{Quadcopter's roll $\phi$ and pitch $\theta$ angles.} 
     \label{fig:drone_roll_pitch_frames}
 \end{figure}
-Let suppose that the $Z$-controller 
+Let us suppose that the $Z$-controller 
 \begin{equation}
     T = (r_1 + mg) / (\cos \phi \cos \theta)
 \end{equation}
@@ -313,7 +313,7 @@ To define the formation problem, let us introduce the quantities
         \Delta_{A1,y} = y_{R_1} - y_A = y_{R_1} - x^F_A
     \end{equation}
 \end{subequations}
-with $(x_A, y_A)$ the position of the drone w.r.t the inertial frame $\{I\}$,
+with $(x_A, y_A)$ the position of the drone w.r.t. the inertial frame $\{I\}$,
 \begin{subequations}
     \begin{equation}
         \Delta_{12} = \begin{bmatrix}
@@ -326,7 +326,7 @@ with $(x_A, y_A)$ the position of the drone w.r.t the inertial frame $\{I\}$,
     \end{equation}
 \end{subequations}
 the desired inter-distances $ \Delta^d_{A1}$ and $\Delta^d_{12}$,
- and the desired position of the drone $(x^d_A, y^d_A)$ w.r.t the inertial 
+ and the desired position of the drone $(x^d_A, y^d_A)$ w.r.t. the inertial 
  frame $\{I\}$ (constant over time).
 The overall dynamics of the formation's errors are as follows
 \begin{equation}
@@ -397,8 +397,8 @@ is acting on the input channel, i.e.
 \end{equation}
 Let us make the following hypothesis: 
 a) the drone knows its position;
-b) the robot $G_1$ knows its position w.r.t the quadcopter;
-c) the robot $G_2$ knows its position w.r.t the other agent $G_1$;
+b) the robot $G_1$ knows its position w.r.t. the quadcopter;
+c) the robot $G_2$ knows its position w.r.t. the other agent $G_1$;
 d) all unicycles are aware of their distance from any obstacles on the ground;
 e) a hierarchy is defined between the ground robots: $G_1$ has the priority over $G_2$.
 \section{Formation Controller}
@@ -526,7 +526,7 @@ the local measurement $\boldsymbol{z}_{i}(k)$ by $K^\star_i$ to obtain $\boldsym
 \subsection{Collision and Obstacle Avoidance: APFs}
 Collisions can still occur when the agents attain the desired shape.
 Moreover, obstacles can be present in the robots' way.
-It is therefore crucial to propose a solution to avoid craches 
+It is therefore crucial to propose a solution to avoid crashes 
 for the experimental validation.
 This is where APFs come to help.
 For simplicity, let us consider at first a scenario where the ground
@@ -576,7 +576,7 @@ then the final control inputs for both unicycles are:
         }{M} \, \Delta T
 \end{aligned}
 \end{equation}
-\section{Simulations Results}
+\section{Simulation Results}
 \label{sec:simulation_results}
 The first validation of the proposed formation 
 controller has been done via simulations in MATLAB R2022a Simulink.
@@ -805,7 +805,7 @@ but the agents in the end oscillate around the desired final positions due to di
 (though they remain within a small neighborhood).
 This is the reason why the solid and dotted lines do not exactly overlap:
 the solid shape appears indeed to be a translated version of the dotted one.
-However, collisons between $G_1$ and $G_2$ are avoided and the formation is reached after
+However, collisions between $G_1$ and $G_2$ are avoided and the formation is reached after
 % $\bar{t} = \SI{54.22}{\second}$, 
 $\bar{t} = \SI{112.14}{\second}$ and 
 $\bar{t} = \SI{112.1}{\second}$, respectively.
@@ -991,16 +991,16 @@ For these reasons, the final geometry of the team (solid line)
 in Fig.~\ref{fig:exp_noObstacles}
 maintains the correct shape and orientation but translated from the desired configuration 
 (dotted black line).
-Moreover, even if the desired final positions are inverted w.r.t the initial 
+Moreover, even if the desired final positions are inverted w.r.t. the initial 
 positions of the ground vehicles, they do not collide.
 A video collecting the experiments can be found at:
 \textcolor{blue}{\href{https://youtu.be/wefGtmPAPiA}{https://youtu.be/wefGtmPAPiA}}.
 This time, the test with the line segment was also included. 
 In this scenario, the geometric shape is achieved at $\bar{t} = \SI{10.04}{\second}$.
-At the end of all experiments, even the ground vehicles appear to oscilllate. 
+At the end of all experiments, even the ground vehicles appear to oscillate. 
 This can be explained by the small oscillations of the drone around the desired position, 
-which are then mirrored by the unicycles as they mantain the geometric shape.
-To prove this suppposition, a trial was performed using only the ground robots, 
+which are then mirrored by the unicycles as they maintain the geometric shape.
+To prove this supposition, a trial was performed using only the ground robots, 
 while the drone's position was mimicked by applying a constant setpoint 
 throughout the test.
 The plots are not made for the sake of brevity, but the experiment is 
@@ -1020,7 +1020,7 @@ due to their close proximity to the obstacles.
 Moreover, this time three cones (in Fig.\ref{fig:exp_staticObstacles}, the red squares)
 were placed in front of the robots.
 The resulting trajectories are displayed in Fig.\ref{fig:exp_staticObstacles_right}.
-Let it compare with Fig.\ref{fig:exp_noObstacles_1}.
+Let us compare it with Fig.\ref{fig:exp_noObstacles_1}.
 In both cases, the geometric shape is formed (in this case $\bar{t} = \SI{15.94}{\second}$)
 without collisions between $G_1$ and $G_2$.
 This time, however, the unicycles have to move avoiding the cones on the ground.
@@ -1140,7 +1140,7 @@ strategy is obtained by solving only one time offline a LMI.
 To avoid collisions among the ground robots and with any
 obstacles, a hierarchy is defined between the two-wheeled agents, 
 and APFs are employed.
-After some simulations, the proposed scheme has  been extremely validated 
+After some simulations, the proposed scheme has  been extensively validated 
 through experiments in an indoor arena.
 The test set included scenarios with static and dynamic obstacles.
 Results show that in all the cases, the team is able to reach 
@@ -1155,7 +1155,7 @@ Finally, in this work it was assumed that the Z-controller
 compensates the gravity, which results in $(X,Y)$-dynamics 
 independent of the drone's mass.
 For future work, it would be interesting to include 
-the quadrotor'altitude in the formation dynamics 
+the quadrotor's altitude in the formation dynamics 
 to address changes in the mass, potentially 
 by modelling the overall system as a Linear Parameter-Varying one.
 
